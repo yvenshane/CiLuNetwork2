@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="2304" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="VENHomePageCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="196" height="249"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="196" height="249"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="640-bb-Tf1">
+                        <rect key="frame" x="0.0" y="0.0" width="196" height="249"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="泸州老窖泸州老窖泸州老窖泸州老窖泸州老窖" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dnv-2Z-Kf1">
+                                <rect key="frame" x="0.0" y="183" width="196" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="op1-B1-Mvg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥1000.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4n-OG-3KW">
+                                <rect key="frame" x="0.0" y="226" width="58" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.81568627450980391" green="0.0078431372549019607" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已销售 180件" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4cA-56-YjP">
+                                <rect key="frame" x="68" y="228" width="62" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lUJ-YG-Ndu">
+                                <rect key="frame" x="0.0" y="0.0" width="196" height="172"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="172" id="fBj-gu-l2U"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Dnv-2Z-Kf1" firstAttribute="top" secondItem="lUJ-YG-Ndu" secondAttribute="bottom" constant="11" id="39t-kd-hpG"/>
+                            <constraint firstItem="lUJ-YG-Ndu" firstAttribute="top" secondItem="640-bb-Tf1" secondAttribute="top" id="3Gb-ha-mgs"/>
+                            <constraint firstItem="4cA-56-YjP" firstAttribute="leading" secondItem="T4n-OG-3KW" secondAttribute="trailing" constant="10" id="6eF-F6-aiy"/>
+                            <constraint firstAttribute="trailing" secondItem="lUJ-YG-Ndu" secondAttribute="trailing" id="Hvn-lK-vIM"/>
+                            <constraint firstItem="T4n-OG-3KW" firstAttribute="top" secondItem="Dnv-2Z-Kf1" secondAttribute="bottom" constant="11" id="OiE-bD-ZdI"/>
+                            <constraint firstAttribute="trailing" secondItem="Dnv-2Z-Kf1" secondAttribute="trailing" id="Ztp-LR-pr6"/>
+                            <constraint firstItem="4cA-56-YjP" firstAttribute="centerY" secondItem="T4n-OG-3KW" secondAttribute="centerY" id="aVJ-6U-t9f"/>
+                            <constraint firstItem="T4n-OG-3KW" firstAttribute="leading" secondItem="640-bb-Tf1" secondAttribute="leading" id="mRg-01-WMW"/>
+                            <constraint firstItem="Dnv-2Z-Kf1" firstAttribute="leading" secondItem="640-bb-Tf1" secondAttribute="leading" id="rcj-3F-500"/>
+                            <constraint firstItem="lUJ-YG-Ndu" firstAttribute="leading" secondItem="640-bb-Tf1" secondAttribute="leading" id="x2S-cU-ygz"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="640-bb-Tf1" secondAttribute="trailing" id="7LO-i2-nnj"/>
+                <constraint firstItem="640-bb-Tf1" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="McN-am-LcF"/>
+                <constraint firstAttribute="bottom" secondItem="640-bb-Tf1" secondAttribute="bottom" id="cfr-Jq-bov"/>
+                <constraint firstItem="640-bb-Tf1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="zCS-GW-tvb"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <size key="customSize" width="196" height="249"/>
+            <connections>
+                <outlet property="iconImageView" destination="lUJ-YG-Ndu" id="6iC-Hu-XAb"/>
+                <outlet property="mainBackgroundView" destination="640-bb-Tf1" id="Y6b-FA-ghN"/>
+                <outlet property="numberLabel" destination="4cA-56-YjP" id="d17-5b-SCD"/>
+                <outlet property="priceLabel" destination="T4n-OG-3KW" id="O0s-gx-QtO"/>
+                <outlet property="titleLabel" destination="Dnv-2Z-Kf1" id="FGC-tJ-e60"/>
+            </connections>
+            <point key="canvasLocation" x="-97.599999999999994" y="120.98950524737631"/>
+        </collectionViewCell>
+    </objects>
+</document>

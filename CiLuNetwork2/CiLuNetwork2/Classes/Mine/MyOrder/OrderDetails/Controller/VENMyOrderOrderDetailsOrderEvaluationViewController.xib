@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="2304" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VENMyOrderOrderDetailsOrderEvaluationViewController">
+            <connections>
+                <outlet property="contentTextView" destination="4b3-vv-QcY" id="eou-82-wTQ"/>
+                <outlet property="placeholderLabel" destination="45r-Ca-ZBj" id="sXq-Lg-htf"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ec8-Qd-rNO">
+                    <rect key="frame" x="0.0" y="30" width="375" height="160"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="160" id="wXg-YE-2d8"/>
+                    </constraints>
+                </imageView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4b3-vv-QcY">
+                    <rect key="frame" x="15" y="30" width="345" height="160"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="160" id="NHQ-DS-HX9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本次购物您满意吗，还有什么想说的～" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45r-Ca-ZBj">
+                    <rect key="frame" x="20" y="38" width="335" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="4b3-vv-QcY" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="15" id="0Hn-vs-b7h"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="45r-Ca-ZBj" secondAttribute="trailing" constant="20" id="FX0-sb-xM3"/>
+                <constraint firstItem="45r-Ca-ZBj" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="18" id="Run-85-aOv"/>
+                <constraint firstItem="4b3-vv-QcY" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="10" id="SzX-X3-oSS"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="4b3-vv-QcY" secondAttribute="trailing" constant="15" id="acn-7h-YBq"/>
+                <constraint firstItem="ec8-Qd-rNO" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="10" id="ea7-bp-Xb3"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="ec8-Qd-rNO" secondAttribute="trailing" id="gvJ-sD-Eny"/>
+                <constraint firstItem="ec8-Qd-rNO" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="qxF-ii-CSz"/>
+                <constraint firstItem="45r-Ca-ZBj" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="vZS-k0-GSX"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+        </view>
+    </objects>
+</document>

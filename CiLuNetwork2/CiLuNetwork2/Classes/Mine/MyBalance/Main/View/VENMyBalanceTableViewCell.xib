@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="2304" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="66" id="KGk-i7-Jjw" customClass="VENMyBalanceTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="65.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMf-wp-q6n">
+                        <rect key="frame" x="15" y="12" width="239" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="gQd-Xj-no0"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.10196078431372549" green="0.10196078431372549" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZT-CF-A8d">
+                        <rect key="frame" x="15" y="35" width="290" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="bzY-0i-mnM"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.69803921568627447" green="0.69803921568627447" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxv-AF-ffH">
+                        <rect key="frame" x="269" y="12" width="36" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.1019607843" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CgV-BY-jzY">
+                        <rect key="frame" x="15" y="65" width="305" height="1"/>
+                        <color key="backgroundColor" red="0.90980392156862744" green="0.90980392156862744" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="bEq-Od-TFo"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="zxv-AF-ffH" secondAttribute="trailing" constant="15" id="3Hd-XW-MF9"/>
+                    <constraint firstAttribute="bottom" secondItem="CgV-BY-jzY" secondAttribute="bottom" id="AgW-1w-lQb"/>
+                    <constraint firstItem="zxv-AF-ffH" firstAttribute="leading" secondItem="bMf-wp-q6n" secondAttribute="trailing" constant="15" id="DHL-Tb-mHx"/>
+                    <constraint firstAttribute="trailing" secondItem="dZT-CF-A8d" secondAttribute="trailing" constant="15" id="HKR-Gp-0VG"/>
+                    <constraint firstItem="bMf-wp-q6n" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="O22-bj-L8m"/>
+                    <constraint firstItem="bMf-wp-q6n" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="TOQ-rR-PNf"/>
+                    <constraint firstAttribute="trailing" secondItem="CgV-BY-jzY" secondAttribute="trailing" id="YJH-LV-GMh"/>
+                    <constraint firstItem="CgV-BY-jzY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="ed9-Yr-dBZ"/>
+                    <constraint firstItem="dZT-CF-A8d" firstAttribute="top" secondItem="bMf-wp-q6n" secondAttribute="bottom" constant="3" id="rDv-Qp-hIf"/>
+                    <constraint firstItem="zxv-AF-ffH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="v5U-K0-nd1"/>
+                    <constraint firstItem="dZT-CF-A8d" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="zYr-fI-8M7"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="bottomLabel" destination="dZT-CF-A8d" id="6nQ-LF-TL2"/>
+                <outlet property="rightLabel" destination="zxv-AF-ffH" id="6Vf-hY-DKL"/>
+                <outlet property="topLabel" destination="bMf-wp-q6n" id="dgy-FT-b23"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="54"/>
+        </tableViewCell>
+    </objects>
+</document>
