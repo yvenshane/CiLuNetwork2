@@ -7,7 +7,7 @@
 //
 
 #import "VENVerificationOfPhoneNumberViewController.h"
-#import "VENFillInInformationViewController.h"
+#import "VENSetPasswordViewController.h"
 
 @interface VENVerificationOfPhoneNumberViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *closeButton;
@@ -108,13 +108,11 @@
     
     [[VENNetworkTool sharedManager] requestWithMethod:HTTPMethodPost path:@"auth/verifyMobile" params:params showLoading:YES successBlock:^(id response) {
         
-        VENFillInInformationViewController *vc = [[VENFillInInformationViewController alloc] init];
-        vc.phoneCode = self.phoneTextField.text;
-        vc.verificationCode = self.verificationCodeTextField.text;
-        vc.invitationCode = self.invitationCodeTextField.text;
+        VENSetPasswordViewController *vc = [[VENSetPasswordViewController alloc] init];
+        vc.mobile = self.phoneTextField.text;
+        vc.invitation_code = self.invitationCodeTextField.text;
         vc.union_id = self.union_id;
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-        [self presentViewController:nav animated:YES completion:nil];
+        [self presentViewController:vc animated:YES completion:nil];
         
     } failureBlock:^(NSError *error) {
         

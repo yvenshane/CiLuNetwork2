@@ -192,11 +192,9 @@
 		2CEA8A38222A859900EE543C /* VENHomePageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CEA8902222A859800EE543C /* VENHomePageCollectionViewCell.xib */; };
 		2CEA8A39222A859900EE543C /* VENHomePageNavigationItemTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEA8904222A859800EE543C /* VENHomePageNavigationItemTitleView.m */; };
 		2CEA8A3A222A859900EE543C /* VENVerificationOfPhoneNumberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CEA890A222A859800EE543C /* VENVerificationOfPhoneNumberViewController.xib */; };
-		2CEA8A3B222A859900EE543C /* VENFillInInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEA890B222A859800EE543C /* VENFillInInformationViewController.m */; };
 		2CEA8A3C222A859900EE543C /* VENSetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEA890C222A859800EE543C /* VENSetPasswordViewController.m */; };
 		2CEA8A3D222A859900EE543C /* VENVerificationOfPhoneNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEA890F222A859800EE543C /* VENVerificationOfPhoneNumberViewController.m */; };
 		2CEA8A3E222A859900EE543C /* VENSetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CEA8912222A859800EE543C /* VENSetPasswordViewController.xib */; };
-		2CEA8A3F222A859900EE543C /* VENFillInInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CEA8913222A859800EE543C /* VENFillInInformationViewController.xib */; };
 		2CEA8A40222A859900EE543C /* VENRegistSetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEA8916222A859800EE543C /* VENRegistSetPasswordViewController.m */; };
 		2CEA8A41222A859900EE543C /* VENRegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEA8917222A859800EE543C /* VENRegistViewController.m */; };
 		2CEA8A42222A859900EE543C /* VENRegistSetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CEA8918222A859800EE543C /* VENRegistSetPasswordViewController.xib */; };
@@ -675,13 +673,10 @@
 		2CEA8905222A859800EE543C /* VENHomePageNavigationItemTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VENHomePageNavigationItemTitleView.h; sourceTree = "<group>"; };
 		2CEA8909222A859800EE543C /* VENVerificationOfPhoneNumberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VENVerificationOfPhoneNumberViewController.h; sourceTree = "<group>"; };
 		2CEA890A222A859800EE543C /* VENVerificationOfPhoneNumberViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VENVerificationOfPhoneNumberViewController.xib; sourceTree = "<group>"; };
-		2CEA890B222A859800EE543C /* VENFillInInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VENFillInInformationViewController.m; sourceTree = "<group>"; };
 		2CEA890C222A859800EE543C /* VENSetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VENSetPasswordViewController.m; sourceTree = "<group>"; };
 		2CEA890F222A859800EE543C /* VENVerificationOfPhoneNumberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VENVerificationOfPhoneNumberViewController.m; sourceTree = "<group>"; };
 		2CEA8910222A859800EE543C /* VENSetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VENSetPasswordViewController.h; sourceTree = "<group>"; };
-		2CEA8911222A859800EE543C /* VENFillInInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VENFillInInformationViewController.h; sourceTree = "<group>"; };
 		2CEA8912222A859800EE543C /* VENSetPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VENSetPasswordViewController.xib; sourceTree = "<group>"; };
-		2CEA8913222A859800EE543C /* VENFillInInformationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VENFillInInformationViewController.xib; sourceTree = "<group>"; };
 		2CEA8916222A859800EE543C /* VENRegistSetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VENRegistSetPasswordViewController.m; sourceTree = "<group>"; };
 		2CEA8917222A859800EE543C /* VENRegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VENRegistViewController.m; sourceTree = "<group>"; };
 		2CEA8918222A859800EE543C /* VENRegistSetPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VENRegistSetPasswordViewController.xib; sourceTree = "<group>"; };
@@ -901,9 +896,9 @@
 				2CEA889E222A808A00EE543C /* SharedManager */,
 				2CEA86B8222A806800EE543C /* ThirdPartyFramework */,
 				2CEA88AE222A81E200EE543C /* Main */,
+				2CEA8906222A859800EE543C /* Login&Regist */,
 				2CEA8920222A859800EE543C /* Classify */,
 				2CEA88EF222A859800EE543C /* HomePage */,
-				2CEA8906222A859800EE543C /* Login&Regist */,
 				2CEA8951222A859800EE543C /* Mine */,
 				2CEA88B8222A859800EE543C /* ShoppingCart */,
 			);
@@ -1883,10 +1878,10 @@
 		2CEA8906222A859800EE543C /* Login&Regist */ = {
 			isa = PBXGroup;
 			children = (
+				2CEA891C222A859800EE543C /* Login */,
 				2CEA8907222A859800EE543C /* VerificationOfPhoneNumber */,
 				2CEA8914222A859800EE543C /* Classes */,
 				2CEA8915222A859800EE543C /* FindPassword */,
-				2CEA891C222A859800EE543C /* Login */,
 			);
 			path = "Login&Regist";
 			sourceTree = "<group>";
@@ -1894,32 +1889,18 @@
 		2CEA8907222A859800EE543C /* VerificationOfPhoneNumber */ = {
 			isa = PBXGroup;
 			children = (
-				2CEA8908222A859800EE543C /* 完善信息 */,
-				2CEA8909222A859800EE543C /* VENVerificationOfPhoneNumberViewController.h */,
-				2CEA890A222A859800EE543C /* VENVerificationOfPhoneNumberViewController.xib */,
-				2CEA890B222A859800EE543C /* VENFillInInformationViewController.m */,
-				2CEA890C222A859800EE543C /* VENSetPasswordViewController.m */,
-				2CEA890D222A859800EE543C /* 设置密码 */,
 				2CEA890E222A859800EE543C /* 验证手机号 */,
-				2CEA890F222A859800EE543C /* VENVerificationOfPhoneNumberViewController.m */,
-				2CEA8910222A859800EE543C /* VENSetPasswordViewController.h */,
-				2CEA8911222A859800EE543C /* VENFillInInformationViewController.h */,
-				2CEA8912222A859800EE543C /* VENSetPasswordViewController.xib */,
-				2CEA8913222A859800EE543C /* VENFillInInformationViewController.xib */,
+				2CEA890D222A859800EE543C /* 设置密码 */,
 			);
 			path = VerificationOfPhoneNumber;
-			sourceTree = "<group>";
-		};
-		2CEA8908222A859800EE543C /* 完善信息 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "完善信息";
 			sourceTree = "<group>";
 		};
 		2CEA890D222A859800EE543C /* 设置密码 */ = {
 			isa = PBXGroup;
 			children = (
+				2CEA8910222A859800EE543C /* VENSetPasswordViewController.h */,
+				2CEA890C222A859800EE543C /* VENSetPasswordViewController.m */,
+				2CEA8912222A859800EE543C /* VENSetPasswordViewController.xib */,
 			);
 			path = "设置密码";
 			sourceTree = "<group>";
@@ -1927,6 +1908,9 @@
 		2CEA890E222A859800EE543C /* 验证手机号 */ = {
 			isa = PBXGroup;
 			children = (
+				2CEA8909222A859800EE543C /* VENVerificationOfPhoneNumberViewController.h */,
+				2CEA890F222A859800EE543C /* VENVerificationOfPhoneNumberViewController.m */,
+				2CEA890A222A859800EE543C /* VENVerificationOfPhoneNumberViewController.xib */,
 			);
 			path = "验证手机号";
 			sourceTree = "<group>";
@@ -1955,8 +1939,8 @@
 			isa = PBXGroup;
 			children = (
 				2CEA891D222A859800EE543C /* VENLoginViewController.h */,
-				2CEA891E222A859800EE543C /* VENLoginViewController.xib */,
 				2CEA891F222A859800EE543C /* VENLoginViewController.m */,
+				2CEA891E222A859800EE543C /* VENLoginViewController.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -2895,7 +2879,6 @@
 				2CEA8A29222A859900EE543C /* VENShoppingCartPlacingOrderFooterView.xib in Resources */,
 				2CEA8A59222A859900EE543C /* VENMyTeamSubviewsTableViewCell.xib in Resources */,
 				2CEA8A81222A859900EE543C /* VENMyBalanceAddAccountTableViewCell.xib in Resources */,
-				2CEA8A3F222A859900EE543C /* VENFillInInformationViewController.xib in Resources */,
 				2CEA8A43222A859900EE543C /* VENRegistViewController.xib in Resources */,
 				2CEA8A20222A859900EE543C /* VENShoppingCartPlacingOrderReceivingAddAddressTableViewCell.xib in Resources */,
 				2CEA8A6F222A859900EE543C /* VENMyOrderOrderDetailsTableViewCell.xib in Resources */,
@@ -3171,7 +3154,6 @@
 				2CEA8A63222A859900EE543C /* VENMyEvaluationTableViewCell.m in Sources */,
 				2CEA8818222A806900EE543C /* LGPhotoPickerBrowserPhotoView.m in Sources */,
 				2CEA8896222A806900EE543C /* SDWebImageCompat.m in Sources */,
-				2CEA8A3B222A859900EE543C /* VENFillInInformationViewController.m in Sources */,
 				2CEA8884222A806900EE543C /* AFURLSessionManager.m in Sources */,
 				2CEA88B6222A81E200EE543C /* VENTabBarController.m in Sources */,
 				2CEA8A5A222A859900EE543C /* VENMyTeamSubviewsTableViewCell.m in Sources */,

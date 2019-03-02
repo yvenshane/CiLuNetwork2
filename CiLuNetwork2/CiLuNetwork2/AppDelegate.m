@@ -26,16 +26,16 @@
     [_window makeKeyAndVisible];
     
 #pragma mark - 请求公共数据
-//    [[VENNetworkTool sharedManager] requestWithMethod:HTTPMethodPost path:@"app/metaData" params:nil showLoading:NO successBlock:^(id response) {
-//
-//        if ([response[@"status"] integerValue] == 0) {
-//            NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-//            [userDefaults setObject:response[@"data"] forKey:@"metaData"];
-//        }
-//
-//    } failureBlock:^(NSError *error) {
-//
-//    }];
+    [[VENNetworkTool sharedManager] requestWithMethod:HTTPMethodPost path:@"app/metaData" params:nil showLoading:NO successBlock:^(id response) {
+
+        if ([response[@"status"] integerValue] == 0) {
+            NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+            [userDefaults setObject:response[@"data"] forKey:@"metaData"];
+        }
+
+    } failureBlock:^(NSError *error) {
+
+    }];
     
     // 注册微信 APPID
 //    [WXApi registerApp:@"wx6132aa5b6edb38e6" enableMTA:NO];
