@@ -12,15 +12,14 @@
 
 @interface VENSetPasswordViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *setPasswordTextField;
-@property (weak, nonatomic) IBOutlet UIButton *leftButton;
-@property (weak, nonatomic) IBOutlet UIButton *rightButton;
+@property (weak, nonatomic) IBOutlet UITextField *rePasswordTextField;
+
 @property (weak, nonatomic) IBOutlet UIButton *registButton;
 @property (weak, nonatomic) IBOutlet UIButton *otherButton;
 @property (weak, nonatomic) IBOutlet UILabel *otherLabel;
 
-@property (nonatomic, copy) NSArray *tag_list;
-
 @property (nonatomic, assign) BOOL setPasswordTextFieldStatus;
+@property (nonatomic, assign) BOOL rePasswordTextFieldStatus;
 
 @end
 
@@ -30,17 +29,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    NSLog(@"mobile - %@", self.mobile);
-    NSLog(@"mobile - %@", self.face_image);
-    NSLog(@"mobile - %@", self.id_card);
-    NSLog(@"mobile - %@", self.invitation_code);
-    
-    NSDictionary *metaData = [[NSUserDefaults standardUserDefaults] objectForKey:@"metaData"];
-    self.tag_list = metaData[@"tag_list"];
-
-    [self.leftButton setTitle:[NSString stringWithFormat:@"  %@", self.tag_list[0][@"name"]] forState:UIControlStateNormal];
-    [self.rightButton setTitle:[NSString stringWithFormat:@"  %@", self.tag_list[1][@"name"]] forState:UIControlStateNormal];
-    
     self.registButton.layer.cornerRadius = 4.0f;
     self.registButton.layer.masksToBounds = YES;
     
@@ -49,11 +37,17 @@
     self.otherLabel.attributedText = attributedStr;
     
     [self.setPasswordTextField addTarget:self action:@selector(setPasswordTextFieldChanged:) forControlEvents:UIControlEventEditingChanged];
+    [self.rePasswordTextField addTarget:self action:@selector(rePasswordTextFieldChanged:) forControlEvents:UIControlEventEditingChanged];
 }
 
-- (void)setPasswordTextFieldChanged:(UITextField*)textField {
+- (void)setPasswordTextFieldChanged:(UITextField *)textField {
     self.setPasswordTextFieldStatus = textField.text.length >= 6 ? YES : NO;
-    self.registButton.backgroundColor = self.setPasswordTextFieldStatus == YES ? COLOR_THEME : UIColorFromRGB(0xDEDEDE);
+    self.registButton.backgroundColor = self.setPasswordTextFieldStatus == YES && self.rePasswordTextFieldStatus == YES ? COLOR_THEME : UIColorFromRGB(0xDEDEDE);
+}
+
+- (void)rePasswordTextFieldChanged:(UITextField *)textField {
+    self.rePasswordTextFieldStatus = textField.text.length >= 6 ? YES : NO;
+    self.registButton.backgroundColor = self.setPasswordTextFieldStatus == YES && self.rePasswordTextFieldStatus == YES ? COLOR_THEME : UIColorFromRGB(0xDEDEDE);
 }
 
 #pragma mark - 注册
@@ -63,39 +57,29 @@
         return;
     }
     
-    NSDictionary *params;
-    
-    if ([[VENClassEmptyManager sharedManager] isEmptyString:self.union_id]) {
-        params = @{@"mobile" : self.mobile,
-                   @"password" : self.setPasswordTextField.text,
-                   @"tag" : self.leftButton.selected == YES ? [self.tag_list[0][@"id"] stringValue] : [self.tag_list[1][@"id"] stringValue],
-                   @"face_image" : self.face_image,
-                   @"id_card" : self.id_card,
-                   @"invitation_code" : self.invitation_code};
-    } else {
-        params = @{@"mobile" : self.mobile,
-                   @"password" : self.setPasswordTextField.text,
-                   @"tag" : self.leftButton.selected == YES ? [self.tag_list[0][@"id"] stringValue] : [self.tag_list[1][@"id"] stringValue],
-                   @"face_image" : self.face_image,
-                   @"id_card" : self.id_card,
-                   @"invitation_code" : self.invitation_code,
-                   @"union_id" : self.union_id};
+    if ([[VENClassEmptyManager sharedManager] isEmptyString:self.rePasswordTextField.text] || self.setPasswordTextField.text.length < 6) {
+        
+        if (![self.setPasswordTextField.text isEqualToString:self.rePasswordTextField.text]) {
+            [[VENMBProgressHUDManager sharedManager] showText:@"两次密码输入不一致"];
+            return;
+        }
+        
+        [[VENMBProgressHUDManager sharedManager] showText:@"请设置密码"];
+        return;
     }
     
+    NSDictionary *params = @{@"mobile" : self.mobile,
+                             @"password" : self.setPasswordTextField.text,
+                             @"repeat_password" : self.rePasswordTextField.text,
+                             @"foundation": self.foundation};
+                             
     [[VENNetworkTool sharedManager] requestWithMethod:HTTPMethodPost path:@"auth/register" params:params showLoading:YES successBlock:^(id response) {
         
         if ([response[@"status"] integerValue] == 0) {
-
-            if (self.leftButton.selected && !self.rightButton.selected) {
-                [[NSUserDefaults standardUserDefaults] setObject:self.tag_list[0][@"id"] forKey:@"tag"];
-            } else if (!self.leftButton.selected && self.rightButton.selected) {
-                [[NSUserDefaults standardUserDefaults] setObject:self.tag_list[1][@"id"] forKey:@"tag"];
-            }
-            
-            // 刷新 分类页面
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"Reset" object:nil];
-            // 刷新 首页
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"ResetHomePage" object:nil];
+//            // 刷新 首页
+//            [[NSNotificationCenter defaultCenter] postNotificationName:@"ResetHomePage" object:nil];
+//            // 刷新 分类页面
+//            [[NSNotificationCenter defaultCenter] postNotificationName:@"Reset" object:nil];
 
             // dismiss
             UIViewController * presentingViewController = self.presentingViewController;
@@ -113,16 +97,6 @@
     } failureBlock:^(NSError *error) {
         
     }];
-}
-
-- (IBAction)leftButtonClick:(UIButton *)button {
-    self.rightButton.selected = NO;
-    button.selected = YES;
-}
-
-- (IBAction)rightButtonClick:(UIButton *)button {
-    self.leftButton.selected = NO;
-    button.selected = YES;
 }
 
 - (IBAction)closeButtonClick:(id)sender {

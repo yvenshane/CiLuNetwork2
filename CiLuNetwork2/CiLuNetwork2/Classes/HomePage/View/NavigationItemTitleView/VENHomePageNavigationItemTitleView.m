@@ -24,7 +24,7 @@
         NSDictionary *metaData = [[NSUserDefaults standardUserDefaults] objectForKey:@"metaData"];
         
         UIButton *leftButton = [[UIButton alloc] init];
-        [leftButton setTitle:metaData[@"tag_list"][0][@"name"] forState:UIControlStateNormal];
+        [leftButton setTitle:metaData[@"foundationList"][0][@"name"] forState:UIControlStateNormal];
         [leftButton setTitleColor:COLOR_THEME forState:UIControlStateSelected];
         [leftButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         leftButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:16.0f];
@@ -32,7 +32,7 @@
         [self addSubview:leftButton];
         
         UIButton *rightButton = [[UIButton alloc] init];
-        [rightButton setTitle:metaData[@"tag_list"][1][@"name"] forState:UIControlStateNormal];
+        [rightButton setTitle:metaData[@"foundationList"][1][@"name"] forState:UIControlStateNormal];
         [rightButton setTitleColor:COLOR_THEME forState:UIControlStateSelected];
         [rightButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         rightButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:16.0f];
@@ -49,17 +49,21 @@
         
         NSString *tag = [[[NSUserDefaults standardUserDefaults] objectForKey:@"tag"] stringValue];
         if ([[VENClassEmptyManager sharedManager] isEmptyString:tag]) {
-            tag = [metaData[@"tag_list"][0][@"id"] stringValue];
+            NSDictionary *metaData = [[NSUserDefaults standardUserDefaults] objectForKey:@"metaData"];
+            tag = [metaData[@"foundationList"][0][@"id"] stringValue];
+            if ([[VENClassEmptyManager sharedManager] isEmptyString:tag]) {
+                tag = @"1";
+            }
         }
         
-        if ([tag isEqualToString:[metaData[@"tag_list"][0][@"id"] stringValue]]) {
+        if ([tag isEqualToString:[metaData[@"foundationList"][0][@"id"] stringValue]]) {
             leftButton.selected = YES;
             leftButton.userInteractionEnabled = NO;
             rightButton.selected = NO;
             rightButton.userInteractionEnabled = YES;
             leftView.hidden = NO;
             rightView.hidden = YES;
-        } else if ([tag isEqualToString:[metaData[@"tag_list"][1][@"id"] stringValue]]) {
+        } else if ([tag isEqualToString:[metaData[@"foundationList"][1][@"id"] stringValue]]) {
             leftButton.selected = NO;
             leftButton.userInteractionEnabled = YES;
             rightButton.selected = YES;

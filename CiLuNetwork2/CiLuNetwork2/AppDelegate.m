@@ -31,6 +31,8 @@
         if ([response[@"status"] integerValue] == 0) {
             NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
             [userDefaults setObject:response[@"data"] forKey:@"metaData"];
+            
+            
         }
 
     } failureBlock:^(NSError *error) {

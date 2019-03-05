@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VENVerificationOfPhoneNumberViewController">
             <connections>
+                <outlet property="choiceButton" destination="Xtl-fX-lyR" id="M5X-TQ-gv2"/>
                 <outlet property="closeButton" destination="6Tu-be-4el" id="y1g-El-ype"/>
                 <outlet property="getverificationCodeButton" destination="nrN-cv-xTY" id="Ywc-Qd-2R4"/>
                 <outlet property="nextButton" destination="5Wd-L2-btp" id="68q-0N-vsn"/>
@@ -124,6 +125,9 @@
                     <state key="normal" title="选择所属基金会">
                         <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
+                    <connections>
+                        <action selector="choiceButtonClick:" destination="-1" eventType="touchUpInside" id="bXw-nh-1EI"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

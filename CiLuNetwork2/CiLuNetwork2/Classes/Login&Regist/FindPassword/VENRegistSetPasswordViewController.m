@@ -23,10 +23,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-    NSLog(@"手机号: %@", self.phoneCode);
-    NSLog(@"验证码: %@", self.verificationCode);
-//    NSLog(@"邀请码: %@", self.invitationCode);
 
     [self.passwordTextField1 addTarget:self action:@selector(passwordTextField1Changed:) forControlEvents:UIControlEventEditingChanged];
     
@@ -68,7 +64,7 @@
         return;
     }
     
-    if (![[VENClassEmptyManager sharedManager] isEmptyString:self.phoneCode] && ![[VENClassEmptyManager sharedManager] isEmptyString:self.verificationCode]) {
+    if (![[VENClassEmptyManager sharedManager] isEmptyString:self.phoneCode]) {
         
         NSDictionary *params = @{@"mobile" : self.phoneCode,
                                  @"password" : self.passwordTextField1.text,

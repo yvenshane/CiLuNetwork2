@@ -13,7 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *closeButton;
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
 @property (weak, nonatomic) IBOutlet UITextField *verificationCodeTextField;
-//@property (weak, nonatomic) IBOutlet UITextField *invitationCodeTextField;
 @property (weak, nonatomic) IBOutlet UIButton *getverificationCodeButton;
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
 
@@ -104,7 +103,7 @@
     
     NSDictionary *params = @{@"mobile" : self.phoneTextField.text,
                              @"code" : self.verificationCodeTextField.text,
-                             @"type" : @"1"};
+                             @"type" : @"2"};
     
     [[VENNetworkTool sharedManager] requestWithMethod:HTTPMethodPost path:@"auth/verifyMobile" params:params showLoading:YES successBlock:^(id response) {
         
@@ -115,8 +114,6 @@
         
         VENRegistSetPasswordViewController *vc = [[VENRegistSetPasswordViewController alloc] init];
         vc.phoneCode = self.phoneTextField.text;
-        vc.verificationCode = self.verificationCodeTextField.text;
-        //    vc.invitationCode = self.invitationCodeTextField.text;
         [self presentViewController:vc animated:YES completion:nil];
         
     } failureBlock:^(NSError *error) {

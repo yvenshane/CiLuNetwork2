@@ -10,11 +10,6 @@
 
 @interface VENSetPasswordViewController : UIViewController
 @property (nonatomic, copy) NSString *mobile;
-@property (nonatomic, copy) NSString *password;
-//@property (nonatomic, copy) NSString *tag;
-@property (nonatomic, copy) NSString *face_image;
-@property (nonatomic, copy) NSString *id_card;
-@property (nonatomic, copy) NSString *union_id;
-@property (nonatomic, copy) NSString *invitation_code;
+@property (nonatomic, copy) NSString *foundation;
 
 @end

@@ -23,7 +23,7 @@ static dispatch_once_t onceToken;
 
 + (instancetype)sharedManager {
     dispatch_once(&onceToken, ^{
-        instance = [[VENNetworkTool alloc] initWithBaseURL:[NSURL URLWithString:@"http://liqixiong.ahaiba.com/"]];
+        instance = [[VENNetworkTool alloc] initWithBaseURL:[NSURL URLWithString:@"http://ciluying.ahaiba.cn/"]];
     });
     return instance;
 }

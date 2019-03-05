@@ -13,8 +13,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *closeButton;
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
 @property (weak, nonatomic) IBOutlet UITextField *verificationCodeTextField;
-@property (weak, nonatomic) IBOutlet UITextField *invitationCodeTextField;
 @property (weak, nonatomic) IBOutlet UIButton *getverificationCodeButton;
+@property (weak, nonatomic) IBOutlet UIButton *choiceButton;
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
 
 @property (nonatomic, assign) BOOL phoneTextFieldStatus;
@@ -22,6 +22,8 @@
 
 @property (nonatomic, assign) NSInteger seconds;
 @property (nonatomic, strong) NSTimer *countDownTimer;
+
+@property (nonatomic, copy) NSString *foundation;
 
 @end
 
@@ -39,16 +41,38 @@
     [self.verificationCodeTextField addTarget:self action:@selector(verificationCodeTextFieldChanged:) forControlEvents:UIControlEventEditingChanged];
 }
 
-- (void)phoneTextFieldChanged:(UITextField*)textField {
+- (IBAction)choiceButtonClick:(id)sender {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"请选择所属基金会" preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    NSDictionary *foundationList = [[NSUserDefaults standardUserDefaults] objectForKey:@"metaData"][@"foundationList"];
+    for (NSDictionary *dict in foundationList) {
+        
+        UIAlertAction *action = [UIAlertAction actionWithTitle:dict[@"name"] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            self.foundation = [dict[@"id"] stringValue];
+            [self.choiceButton setTitle:dict[@"name"] forState:UIControlStateNormal];
+            
+            // 改变按钮颜色
+            self.nextButton.backgroundColor = self.phoneTextFieldStatus == YES && self.verificationCodeTextFieldStatus == YES && ![[VENClassEmptyManager sharedManager] isEmptyString:self.foundation] ? COLOR_THEME : UIColorFromRGB(0xDEDEDE);
+        }];
+        [alert addAction:action];
+    }
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    [alert addAction:cancelAction];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)phoneTextFieldChanged:(UITextField *)textField {
     self.phoneTextFieldStatus = textField.text.length == 11 ? YES : NO;
-    self.nextButton.backgroundColor = self.phoneTextFieldStatus == YES && self.verificationCodeTextFieldStatus == YES ? COLOR_THEME : UIColorFromRGB(0xDEDEDE);
+    self.nextButton.backgroundColor = self.phoneTextFieldStatus == YES && self.verificationCodeTextFieldStatus == YES && ![[VENClassEmptyManager sharedManager] isEmptyString:self.foundation] ? COLOR_THEME : UIColorFromRGB(0xDEDEDE);
     
     NSLog(@"%d", self.phoneTextFieldStatus);
 }
 
-- (void)verificationCodeTextFieldChanged:(UITextField*)textField {
+- (void)verificationCodeTextFieldChanged:(UITextField *)textField {
     self.verificationCodeTextFieldStatus = textField.text.length == 4 ? YES : NO;
-    self.nextButton.backgroundColor = self.phoneTextFieldStatus == YES && self.verificationCodeTextFieldStatus == YES ? COLOR_THEME : UIColorFromRGB(0xDEDEDE);
+    self.nextButton.backgroundColor = self.phoneTextFieldStatus == YES && self.verificationCodeTextFieldStatus == YES && ![[VENClassEmptyManager sharedManager] isEmptyString:self.foundation] ? COLOR_THEME : UIColorFromRGB(0xDEDEDE);
     
     NSLog(@"%d", self.verificationCodeTextFieldStatus);
 }
@@ -102,24 +126,27 @@
         return;
     }
     
+    if ([[VENClassEmptyManager sharedManager] isEmptyString:self.foundation]) {
+        [[VENMBProgressHUDManager sharedManager] showText:@"请选择所属基金会"];
+        return;
+    }
+    
     NSDictionary *params = @{@"mobile" : self.phoneTextField.text,
                              @"code" : self.verificationCodeTextField.text,
-                             @"type" : @"2"};
+                             @"type" : @"1"};
     
     [[VENNetworkTool sharedManager] requestWithMethod:HTTPMethodPost path:@"auth/verifyMobile" params:params showLoading:YES successBlock:^(id response) {
         
-        VENSetPasswordViewController *vc = [[VENSetPasswordViewController alloc] init];
-        vc.mobile = self.phoneTextField.text;
-        vc.invitation_code = self.invitationCodeTextField.text;
-        vc.union_id = self.union_id;
-        [self presentViewController:vc animated:YES completion:nil];
+        if ([response[@"status"] integerValue] == 0) {
+            VENSetPasswordViewController *vc = [[VENSetPasswordViewController alloc] init];
+            vc.mobile = self.phoneTextField.text;
+            vc.foundation = self.foundation;
+            [self presentViewController:vc animated:YES completion:nil];
+        }
         
     } failureBlock:^(NSError *error) {
         
     }];
-    
-
-    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -45,9 +45,9 @@
     [self setupNavigationItemRightBarButtonItem];
     [self setupCollectionView];
     
-    [self.collectionView.mj_header beginRefreshing];
-    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationCenter:) name:@"ResetHomePage" object:nil];
+    
+    [self.collectionView.mj_header beginRefreshing];
 }
 
 - (void)notificationCenter:(NSNotification *)noti {
@@ -59,7 +59,10 @@
     NSString *tag = [[[NSUserDefaults standardUserDefaults] objectForKey:@"tag"] stringValue];
     if ([[VENClassEmptyManager sharedManager] isEmptyString:tag]) {
         NSDictionary *metaData = [[NSUserDefaults standardUserDefaults] objectForKey:@"metaData"];
-        tag = [metaData[@"tag_list"][0][@"id"] stringValue];
+        tag = [metaData[@"foundationList"][0][@"id"] stringValue];
+        if ([[VENClassEmptyManager sharedManager] isEmptyString:tag]) {
+            tag = @"1";
+        }
     }
     
     [[VENNetworkTool sharedManager] requestWithMethod:HTTPMethodPost path:@"goods/index" params:@{@"tag" : tag} showLoading:YES successBlock:^(id response) {
@@ -266,12 +269,12 @@
         if ([str isEqualToString:@"left"]) {
             NSLog(@"left");
             
-            [userDefaults setObject:metaData[@"tag_list"][0][@"id"] forKey:@"tag"];
+            [userDefaults setObject:metaData[@"foundationList"][0][@"id"] forKey:@"tag"];
             [self.collectionView.mj_header beginRefreshing];
         } else if ([str isEqualToString:@"right"]) {
             NSLog(@"right");
             
-            [userDefaults setObject:metaData[@"tag_list"][1][@"id"] forKey:@"tag"];
+            [userDefaults setObject:metaData[@"foundationList"][1][@"id"] forKey:@"tag"];
             [self.collectionView.mj_header beginRefreshing];
         }
         

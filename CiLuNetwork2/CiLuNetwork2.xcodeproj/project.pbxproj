@@ -1625,15 +1625,15 @@
 		2CEA889E222A808A00EE543C /* SharedManager */ = {
 			isa = PBXGroup;
 			children = (
+				2CEA88A5222A808A00EE543C /* VENBadgeValueManager.h */,
 				2CEA889F222A808A00EE543C /* VENBadgeValueManager.m */,
 				2CEA88A0222A808A00EE543C /* VENMBProgressHUDManager.h */,
+				2CEA88A4222A808A00EE543C /* VENMBProgressHUDManager.m */,
+				2CEA88A7222A808B00EE543C /* VENUserStatusManager.h */,
+				2CEA88A3222A808A00EE543C /* VENUserStatusManager.m */,
+				2CEA88A6222A808B00EE543C /* VENClassEmptyManager.h */,
 				2CEA88A1222A808A00EE543C /* VENClassEmptyManager.m */,
 				2CEA88A2222A808A00EE543C /* VENNetworkTool.h */,
-				2CEA88A3222A808A00EE543C /* VENUserStatusManager.m */,
-				2CEA88A4222A808A00EE543C /* VENMBProgressHUDManager.m */,
-				2CEA88A5222A808A00EE543C /* VENBadgeValueManager.h */,
-				2CEA88A6222A808B00EE543C /* VENClassEmptyManager.h */,
-				2CEA88A7222A808B00EE543C /* VENUserStatusManager.h */,
 				2CEA88A8222A808B00EE543C /* VENNetworkTool.m */,
 			);
 			path = SharedManager;
@@ -1817,8 +1817,8 @@
 		2CEA88F0222A859800EE543C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2CEA88F1222A859800EE543C /* VENHomePageViewController.m */,
 				2CEA88F2222A859800EE543C /* VENHomePageViewController.h */,
+				2CEA88F1222A859800EE543C /* VENHomePageViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1880,7 +1880,6 @@
 			children = (
 				2CEA891C222A859800EE543C /* Login */,
 				2CEA8907222A859800EE543C /* VerificationOfPhoneNumber */,
-				2CEA8914222A859800EE543C /* Classes */,
 				2CEA8915222A859800EE543C /* FindPassword */,
 			);
 			path = "Login&Regist";
@@ -1889,48 +1888,25 @@
 		2CEA8907222A859800EE543C /* VerificationOfPhoneNumber */ = {
 			isa = PBXGroup;
 			children = (
-				2CEA890E222A859800EE543C /* 验证手机号 */,
-				2CEA890D222A859800EE543C /* 设置密码 */,
-			);
-			path = VerificationOfPhoneNumber;
-			sourceTree = "<group>";
-		};
-		2CEA890D222A859800EE543C /* 设置密码 */ = {
-			isa = PBXGroup;
-			children = (
+				2CEA8909222A859800EE543C /* VENVerificationOfPhoneNumberViewController.h */,
+				2CEA890F222A859800EE543C /* VENVerificationOfPhoneNumberViewController.m */,
+				2CEA890A222A859800EE543C /* VENVerificationOfPhoneNumberViewController.xib */,
 				2CEA8910222A859800EE543C /* VENSetPasswordViewController.h */,
 				2CEA890C222A859800EE543C /* VENSetPasswordViewController.m */,
 				2CEA8912222A859800EE543C /* VENSetPasswordViewController.xib */,
 			);
-			path = "设置密码";
-			sourceTree = "<group>";
-		};
-		2CEA890E222A859800EE543C /* 验证手机号 */ = {
-			isa = PBXGroup;
-			children = (
-				2CEA8909222A859800EE543C /* VENVerificationOfPhoneNumberViewController.h */,
-				2CEA890F222A859800EE543C /* VENVerificationOfPhoneNumberViewController.m */,
-				2CEA890A222A859800EE543C /* VENVerificationOfPhoneNumberViewController.xib */,
-			);
-			path = "验证手机号";
-			sourceTree = "<group>";
-		};
-		2CEA8914222A859800EE543C /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Classes;
+			path = VerificationOfPhoneNumber;
 			sourceTree = "<group>";
 		};
 		2CEA8915222A859800EE543C /* FindPassword */ = {
 			isa = PBXGroup;
 			children = (
-				2CEA8916222A859800EE543C /* VENRegistSetPasswordViewController.m */,
-				2CEA8917222A859800EE543C /* VENRegistViewController.m */,
-				2CEA8918222A859800EE543C /* VENRegistSetPasswordViewController.xib */,
-				2CEA8919222A859800EE543C /* VENRegistSetPasswordViewController.h */,
 				2CEA891A222A859800EE543C /* VENRegistViewController.h */,
+				2CEA8917222A859800EE543C /* VENRegistViewController.m */,
 				2CEA891B222A859800EE543C /* VENRegistViewController.xib */,
+				2CEA8919222A859800EE543C /* VENRegistSetPasswordViewController.h */,
+				2CEA8916222A859800EE543C /* VENRegistSetPasswordViewController.m */,
+				2CEA8918222A859800EE543C /* VENRegistSetPasswordViewController.xib */,
 			);
 			path = FindPassword;
 			sourceTree = "<group>";
