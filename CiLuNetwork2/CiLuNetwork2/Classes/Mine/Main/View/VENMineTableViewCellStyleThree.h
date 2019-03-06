@@ -13,4 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *nameButton;
 @property (weak, nonatomic) IBOutlet UIButton *otherButton;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *nameButtonCenterYLayoutConstraint;
+
 @end

@@ -77,8 +77,14 @@
     [[VENNetworkTool sharedManager] requestWithMethod:HTTPMethodPost path:@"auth/login" params:params showLoading:YES successBlock:^(id response) {
         
         if ([response[@"status"] integerValue] == 0) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"WechatLoggedInSuccessfully" object:response[@"data"][@"token"]];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshShoppingCart" object:nil];
+            
+            NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+            [userDefaults setObject:response[@"data"][@"token"] forKey:@"token"];
+            
+            self.block(@"loginSuccess");
+            
+            [self dismissViewControllerAnimated:YES completion:nil];
         }
         
     } failureBlock:^(NSError *error) {

@@ -21,6 +21,7 @@
 #import "VENShoppingCartPlacingOrderReceivingAddressViewController.h"
 #import "VENMyCollectionViewController.h"
 #import "VENMyEvaluationViewController.h"
+#import "VENCustomerManagementViewController.h"
 
 #import "VENMineModel.h"
 
@@ -80,13 +81,13 @@ static NSString *cellIdentifier3 = @"cellIdentifier3";
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 4;
+    return [self.model.is_key_account integerValue] == 1 ? 5 : 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 2) {
-        return 4;
-    } else if (section == 3) {
+    if (section == 3) {
+        return 2;
+    } else if (section == 4) {
         return 3;
     } else {
         return 1;
@@ -110,6 +111,14 @@ static NSString *cellIdentifier3 = @"cellIdentifier3";
         }
         
         [cell.nameButton addTarget:self action:@selector(nameButtonClick) forControlEvents:UIControlEventTouchUpInside];
+        
+        if ([[VENUserStatusManager sharedManager] isLogin]) {
+            cell.nameButtonCenterYLayoutConstraint.constant = -14;
+            cell.otherButton.hidden = NO;
+        } else {
+            cell.nameButtonCenterYLayoutConstraint.constant = 0;
+            cell.otherButton.hidden = YES;
+        }
         
         cell.separatorInset = UIEdgeInsetsMake(0, kMainScreenWidth, 0, 0);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -149,20 +158,15 @@ static NSString *cellIdentifier3 = @"cellIdentifier3";
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         if (indexPath.section == 2) {
+            cell.leftLabel.text = @"我的余额";
+            cell.rightLabel.hidden = NO;
+            cell.rightLabel.text = [NSString stringWithFormat:@"%@元", self.model.balance];
+        } else if (indexPath.section == 3) {
+            cell.rightLabel.hidden = YES;
             if (indexPath.row == 0) {
-                cell.leftLabel.text = @"我的余额";
-                cell.rightLabel.hidden = NO;
-                cell.rightLabel.text = [NSString stringWithFormat:@"%@元", self.model.balance];
+                cell.leftLabel.text = @"客户管理";
             } else {
-                cell.rightLabel.hidden = YES;
-                
-                if (indexPath.row == 1) {
-                    cell.leftLabel.text = @"我的积分";
-                } else if (indexPath.row == 2) {
-                    cell.leftLabel.text = @"佣金管理";
-                } else {
-                    cell.leftLabel.text = @"我的团队";
-                }
+                cell.leftLabel.text = @"销售管理";
             }
         } else {
             cell.rightLabel.hidden = YES;
@@ -175,7 +179,6 @@ static NSString *cellIdentifier3 = @"cellIdentifier3";
                 cell.leftLabel.text = @"我的评价";
             }
         }
-        
         return cell;
     }
 }
@@ -246,32 +249,22 @@ static NSString *cellIdentifier3 = @"cellIdentifier3";
             vc.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
         } else if (indexPath.section == 2) {
-            if (indexPath.row == 0) {
-                NSLog(@"我的余额");
-                
-                VENMyBalanceViewController *vc = [[VENMyBalanceViewController alloc] init];
-                vc.hidesBottomBarWhenPushed = YES;
-                [self.navigationController pushViewController:vc animated:YES];
-            } else if (indexPath.row == 1) {
-                NSLog(@"我的积分");
-                
-                VENMyPointsViewController *vc = [[VENMyPointsViewController alloc] init];
-                vc.hidesBottomBarWhenPushed = YES;
-                [self.navigationController pushViewController:vc animated:YES];
-            } else if (indexPath.row == 2) {
-                NSLog(@"佣金管理");
-                
-                VENMyCommissionViewController *vc = [[VENMyCommissionViewController alloc] init];
-                vc.hidesBottomBarWhenPushed = YES;
-                [self.navigationController pushViewController:vc animated:YES];
-            } else if (indexPath.row == 3) {
-                NSLog(@"我的团队");
-                
-                VENMyTeamViewController *vc = [[VENMyTeamViewController alloc] init];
-                vc.hidesBottomBarWhenPushed = YES;
-                [self.navigationController pushViewController:vc animated:YES];
-            }
+            NSLog(@"我的余额");
+            
+            VENMyBalanceViewController *vc = [[VENMyBalanceViewController alloc] init];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
         } else if (indexPath.section == 3) {
+            if (indexPath.row == 0) {
+                NSLog(@"客户管理");
+                
+                VENCustomerManagementViewController *vc = [[VENCustomerManagementViewController alloc] init];
+                vc.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:vc animated:YES];
+            } else {
+                NSLog(@"销售管理");
+            }
+        } else if (indexPath.section == 4) {
             if (indexPath.row == 0) {
                 NSLog(@"地址管理");
                 

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="2304" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="86" id="KGk-i7-Jjw" customClass="VENCustomerManagementTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="86"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="85.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大佬刘" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OGO-wH-hIf">
+                        <rect key="frame" x="15" y="26" width="42" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="Gqu-cw-iYZ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
+                        <color key="textColor" red="0.1019607843" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="153****1123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYq-hK-TyM">
+                        <rect key="frame" x="80" y="26" width="194" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="h3D-O8-eoh"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.1019607843" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="安徽省合肥市蜀山区望江西路西湖国际广场XXXX 店" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rn6-4y-Gmj">
+                        <rect key="frame" x="15" y="54" width="259" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="hWy-M9-mQL"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="br3-qX-GuG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="10"/>
+                        <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10" id="Ysb-h0-vIc"/>
+                        </constraints>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_edit2" translatesAutoresizingMaskIntoConstraints="NO" id="mEy-pe-zNi">
+                        <rect key="frame" x="289" y="40" width="16" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="4N7-SI-zct"/>
+                            <constraint firstAttribute="width" constant="16" id="B6F-1i-8Ti"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="GYq-hK-TyM" firstAttribute="top" secondItem="br3-qX-GuG" secondAttribute="bottom" constant="16" id="6NW-cg-pn3"/>
+                    <constraint firstAttribute="trailing" secondItem="Rn6-4y-Gmj" secondAttribute="trailing" constant="46" id="7eu-dx-mbJ"/>
+                    <constraint firstItem="OGO-wH-hIf" firstAttribute="top" secondItem="br3-qX-GuG" secondAttribute="bottom" constant="16" id="9t6-bU-uXk"/>
+                    <constraint firstItem="Rn6-4y-Gmj" firstAttribute="top" secondItem="GYq-hK-TyM" secondAttribute="bottom" constant="8" id="EWQ-U2-MkB"/>
+                    <constraint firstItem="GYq-hK-TyM" firstAttribute="leading" secondItem="OGO-wH-hIf" secondAttribute="trailing" constant="23" id="FqH-Ob-1x6"/>
+                    <constraint firstItem="OGO-wH-hIf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="I0a-fU-bLL"/>
+                    <constraint firstItem="br3-qX-GuG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="UiX-gE-fCP"/>
+                    <constraint firstItem="br3-qX-GuG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="fI1-bl-gyO"/>
+                    <constraint firstItem="mEy-pe-zNi" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="5" id="lJ1-lP-FHf"/>
+                    <constraint firstItem="Rn6-4y-Gmj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="nTQ-5F-Srs"/>
+                    <constraint firstAttribute="trailing" secondItem="mEy-pe-zNi" secondAttribute="trailing" constant="15" id="tsc-yL-B2o"/>
+                    <constraint firstAttribute="trailing" secondItem="br3-qX-GuG" secondAttribute="trailing" id="wNh-ZE-Vkd"/>
+                    <constraint firstAttribute="trailing" secondItem="GYq-hK-TyM" secondAttribute="trailing" constant="46" id="xb1-PD-8g1"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="addressLabel" destination="Rn6-4y-Gmj" id="mgo-hJ-UH2"/>
+                <outlet property="nameLabel" destination="OGO-wH-hIf" id="dUl-zw-9TM"/>
+                <outlet property="phoneLabel" destination="GYq-hK-TyM" id="mkz-aF-e4r"/>
+            </connections>
+            <point key="canvasLocation" x="137.59999999999999" y="172.71364317841082"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icon_edit2" width="16" height="16"/>
+    </resources>
+</document>

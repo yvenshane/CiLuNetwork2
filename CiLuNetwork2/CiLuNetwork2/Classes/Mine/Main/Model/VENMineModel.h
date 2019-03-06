@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *receiving_count;
 @property (nonatomic, copy) NSString *comment_count;
 
+@property (nonatomic, copy) NSString *is_key_account;
+
 @end
 
 NS_ASSUME_NONNULL_END

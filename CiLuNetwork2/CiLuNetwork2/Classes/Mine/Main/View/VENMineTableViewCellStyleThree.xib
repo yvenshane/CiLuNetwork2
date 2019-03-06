@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment version="2304" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -28,7 +28,7 @@
                         <state key="normal" image="icon_default_head_big"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xPq-m9-Okp">
-                        <rect key="frame" x="102" y="24" width="203" height="26"/>
+                        <rect key="frame" x="102" y="38" width="203" height="26"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="26" id="OWR-tp-Y3m"/>
                         </constraints>
@@ -37,8 +37,8 @@
                             <color key="titleColor" red="0.10196078431372549" green="0.10196078431372549" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icd-i8-zG5">
-                        <rect key="frame" x="102" y="59" width="56" height="20"/>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icd-i8-zG5">
+                        <rect key="frame" x="102" y="73" width="56" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="Mh2-19-oiI"/>
                             <constraint firstAttribute="width" constant="56" id="kld-J8-s7t"/>
@@ -52,9 +52,9 @@
                 <constraints>
                     <constraint firstItem="xPq-m9-Okp" firstAttribute="leading" secondItem="FvB-nv-mib" secondAttribute="trailing" constant="15" id="Igi-yb-3It"/>
                     <constraint firstAttribute="trailing" secondItem="xPq-m9-Okp" secondAttribute="trailing" constant="15" id="JEt-8c-81b"/>
+                    <constraint firstItem="xPq-m9-Okp" firstAttribute="centerY" secondItem="FvB-nv-mib" secondAttribute="centerY" id="LBn-Sw-5Z3"/>
                     <constraint firstItem="icd-i8-zG5" firstAttribute="top" secondItem="xPq-m9-Okp" secondAttribute="bottom" constant="9" id="TrY-1n-efl"/>
                     <constraint firstItem="FvB-nv-mib" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="fDg-1D-JFS"/>
-                    <constraint firstItem="xPq-m9-Okp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="h3R-YL-5Qg"/>
                     <constraint firstItem="icd-i8-zG5" firstAttribute="leading" secondItem="FvB-nv-mib" secondAttribute="trailing" constant="15" id="o2v-FG-NkT"/>
                     <constraint firstItem="FvB-nv-mib" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="uxB-cm-TC1"/>
                 </constraints>
@@ -63,6 +63,7 @@
             <connections>
                 <outlet property="iconButton" destination="FvB-nv-mib" id="qcS-B8-iXM"/>
                 <outlet property="nameButton" destination="xPq-m9-Okp" id="JaM-Vq-sI4"/>
+                <outlet property="nameButtonCenterYLayoutConstraint" destination="LBn-Sw-5Z3" id="ZHL-ob-byn"/>
                 <outlet property="otherButton" destination="icd-i8-zG5" id="YyQ-sK-riH"/>
             </connections>
             <point key="canvasLocation" x="34" y="84"/>
