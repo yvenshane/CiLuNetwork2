@@ -34,7 +34,7 @@ static dispatch_once_t onceToken;
         //request
         self.requestSerializer.timeoutInterval = 15;
         self.requestSerializer.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
-        [self.requestSerializer setValue:[[NSUserDefaults standardUserDefaults] objectForKey:@"Login"][@"userid"] forHTTPHeaderField:@"userid"];
+//        [self.requestSerializer setValue:[[NSUserDefaults standardUserDefaults] objectForKey:@"Login"][@"userid"] forHTTPHeaderField:@"userid"];
         self.requestSerializer.HTTPShouldHandleCookies = YES;
         
         //response
@@ -119,6 +119,8 @@ static dispatch_once_t onceToken;
             } failure:^(NSURLSessionTask *operation, NSError *error) {
                 [self hideLoading:isShow];
                 failure(error);
+                
+                NSLog(@"%@", error);
             }];
             break;
         }

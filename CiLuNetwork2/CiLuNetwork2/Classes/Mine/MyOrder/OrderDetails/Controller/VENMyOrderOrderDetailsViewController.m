@@ -241,7 +241,7 @@ static NSString *cellIdentifier2 = @"cellIdentifier2";
 }
 
 - (void)setupTableView {
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, kMainScreenHeight - statusNavHeight) style:UITableViewStyleGrouped];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, kMainScreenHeight - statusNavHeight - (tabBarHeight - 49)) style:UITableViewStyleGrouped];
     tableView.backgroundColor = UIColorFromRGB(0xF5F5F5);
     tableView.delegate = self;
     tableView.dataSource = self;
@@ -254,7 +254,7 @@ static NSString *cellIdentifier2 = @"cellIdentifier2";
 }
 
 - (void)setupBottomToolBar {
-    UIView *bottomToolBar = [[UIView alloc] initWithFrame:CGRectMake(0, kMainScreenHeight - statusNavHeight - 48, kMainScreenWidth, 48)];
+    UIView *bottomToolBar = [[UIView alloc] initWithFrame:CGRectMake(0, kMainScreenHeight - statusNavHeight - 48 - (tabBarHeight - 49), kMainScreenWidth, 48)];
     bottomToolBar.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:bottomToolBar];
     

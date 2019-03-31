@@ -22,6 +22,7 @@
 #import "VENMyCollectionViewController.h"
 #import "VENMyEvaluationViewController.h"
 #import "VENCustomerManagementViewController.h"
+#import "VENSalesManagementViewController.h"
 
 #import "VENMineModel.h"
 
@@ -86,7 +87,7 @@ static NSString *cellIdentifier3 = @"cellIdentifier3";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 3) {
-        return 2;
+        return [self.model.is_key_account integerValue] == 1 ? 2 : 3;
     } else if (section == 4) {
         return 3;
     } else {
@@ -95,20 +96,13 @@ static NSString *cellIdentifier3 = @"cellIdentifier3";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+#pragma mark - 头部 登录注册
     if (indexPath.section == 0) {
         VENMineTableViewCellStyleThree *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier3 forIndexPath:indexPath];
         
         [cell.iconButton setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.model.avatar]]] forState:UIControlStateNormal];
         [cell.nameButton setTitle:self.model.name forState:UIControlStateNormal];
-        [cell.otherButton setTitle:self.model.tag_name forState:UIControlStateNormal];
-        
-        if ([self.model.tag_name isEqualToString:@"游客"]) {
-            cell.otherButton.layer.borderColor = UIColorFromRGB(0xE8E8E8).CGColor;
-            [cell.otherButton setTitleColor:UIColorFromRGB(0xCCCCCC) forState:UIControlStateNormal];
-        } else {
-            cell.otherButton.layer.borderColor = UIColorFromRGB(0xC7974F).CGColor;
-            [cell.otherButton setTitleColor:UIColorFromRGB(0xC7974F) forState:UIControlStateNormal];
-        }
+        [cell.otherButton setTitle:[NSString stringWithFormat:@"   %@   ", self.model.tag_name] forState:UIControlStateNormal];
         
         [cell.nameButton addTarget:self action:@selector(nameButtonClick) forControlEvents:UIControlEventTouchUpInside];
         
@@ -123,6 +117,7 @@ static NSString *cellIdentifier3 = @"cellIdentifier3";
         cell.separatorInset = UIEdgeInsetsMake(0, kMainScreenWidth, 0, 0);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
+#pragma mark - 我的订单
     } else if (indexPath.section == 1) {
         VENMineTableViewCellStyleTwo *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier2 forIndexPath:indexPath];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -163,10 +158,21 @@ static NSString *cellIdentifier3 = @"cellIdentifier3";
             cell.rightLabel.text = [NSString stringWithFormat:@"%@元", self.model.balance];
         } else if (indexPath.section == 3) {
             cell.rightLabel.hidden = YES;
-            if (indexPath.row == 0) {
-                cell.leftLabel.text = @"客户管理";
+            
+            if ([self.model.is_key_account integerValue] == 1) {
+                if (indexPath.row == 0) {
+                    cell.leftLabel.text = @"客户管理";
+                } else {
+                    cell.leftLabel.text = @"销售管理";
+                }
             } else {
-                cell.leftLabel.text = @"销售管理";
+                if (indexPath.row == 0) {
+                    cell.leftLabel.text = @"地址管理";
+                } else if (indexPath.row == 1) {
+                    cell.leftLabel.text = @"我的收藏";
+                } else {
+                    cell.leftLabel.text = @"我的评价";
+                }
             }
         } else {
             cell.rightLabel.hidden = YES;
@@ -255,14 +261,41 @@ static NSString *cellIdentifier3 = @"cellIdentifier3";
             vc.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
         } else if (indexPath.section == 3) {
-            if (indexPath.row == 0) {
-                NSLog(@"客户管理");
-                
-                VENCustomerManagementViewController *vc = [[VENCustomerManagementViewController alloc] init];
-                vc.hidesBottomBarWhenPushed = YES;
-                [self.navigationController pushViewController:vc animated:YES];
+            if ( [self.model.is_key_account integerValue] == 1) {
+                if (indexPath.row == 0) {
+                    NSLog(@"客户管理");
+                    
+                    VENCustomerManagementViewController *vc = [[VENCustomerManagementViewController alloc] init];
+                    vc.hidesBottomBarWhenPushed = YES;
+                    [self.navigationController pushViewController:vc animated:YES];
+                } else {
+                    NSLog(@"销售管理");
+                    
+                    VENSalesManagementViewController *vc = [[VENSalesManagementViewController alloc] init];
+                    vc.hidesBottomBarWhenPushed = YES;
+                    [self.navigationController pushViewController:vc animated:YES];
+                }
             } else {
-                NSLog(@"销售管理");
+                if (indexPath.row == 0) {
+                    NSLog(@"地址管理");
+                    
+                    VENShoppingCartPlacingOrderReceivingAddressViewController *vc = [[VENShoppingCartPlacingOrderReceivingAddressViewController alloc] init];
+                    vc.hidesBottomBarWhenPushed = YES;
+                    vc.isMinePage = YES;
+                    [self.navigationController pushViewController:vc animated:YES];
+                } else if (indexPath.row == 1) {
+                    NSLog(@"我的收藏");
+                    
+                    VENMyCollectionViewController *vc = [[VENMyCollectionViewController alloc] init];
+                    vc.hidesBottomBarWhenPushed = YES;
+                    [self.navigationController pushViewController:vc animated:YES];
+                } else if (indexPath.row == 2) {
+                    NSLog(@"我的评价");
+                    
+                    VENMyEvaluationViewController *vc = [[VENMyEvaluationViewController alloc] init];
+                    vc.hidesBottomBarWhenPushed = YES;
+                    [self.navigationController pushViewController:vc animated:YES];
+                }
             }
         } else if (indexPath.section == 4) {
             if (indexPath.row == 0) {
@@ -270,6 +303,7 @@ static NSString *cellIdentifier3 = @"cellIdentifier3";
                 
                 VENShoppingCartPlacingOrderReceivingAddressViewController *vc = [[VENShoppingCartPlacingOrderReceivingAddressViewController alloc] init];
                 vc.hidesBottomBarWhenPushed = YES;
+                vc.isMinePage = YES;
                 [self.navigationController pushViewController:vc animated:YES];
             } else if (indexPath.row == 1) {
                 NSLog(@"我的收藏");
@@ -284,7 +318,6 @@ static NSString *cellIdentifier3 = @"cellIdentifier3";
                 vc.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:vc animated:YES];
             }
-            
         }
     } else {
         if (indexPath.section != 0) {
@@ -304,23 +337,19 @@ static NSString *cellIdentifier3 = @"cellIdentifier3";
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UIView *lineView = [[UIView alloc] init];
-    lineView.backgroundColor = UIColorFromRGB(0xF5F5F5);
-    return lineView;
+    return [[UIView alloc] init];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return section == 0 ? 0.01 : 5;
+    return section == 0 ? 0.01 : 10;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    UIView *lineView = [[UIView alloc] init];
-    lineView.backgroundColor = UIColorFromRGB(0xF5F5F5);
-    return lineView;
+    return [[UIView alloc] init];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return section == 3 ? 10 : 5;
+    return 0.01;
 }
 
 #pragma mark - 个人设置

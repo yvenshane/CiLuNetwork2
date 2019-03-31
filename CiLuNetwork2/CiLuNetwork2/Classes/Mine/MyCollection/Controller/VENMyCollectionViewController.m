@@ -144,7 +144,7 @@ static NSString *cellIdentifier = @"cellIdentifier";
 
 #pragma mark - 底部 toolBar
 - (void)setupShoppingBar {
-    UIView *shoppingBar = [[UIView alloc] initWithFrame:CGRectMake(0, kMainScreenHeight - statusNavHeight - 44, kMainScreenWidth, 44)];
+    UIView *shoppingBar = [[UIView alloc] initWithFrame:CGRectMake(0, kMainScreenHeight - statusNavHeight - 44 - (tabBarHeight - 49), kMainScreenWidth, 44)];
     shoppingBar.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:shoppingBar];
     

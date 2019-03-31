@@ -89,10 +89,11 @@ static NSString *cellIdentifier = @"cellIdentifier";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    VENShoppingCartPlacingOrderReceivingAddressModel *model = self.dataArr[indexPath.row];
-    self.block(model);
-    [self. navigationController popViewControllerAnimated:YES];
+    if (!self.isMinePage) {
+        VENShoppingCartPlacingOrderReceivingAddressModel *model = self.dataArr[indexPath.row];
+        self.block(model);
+        [self. navigationController popViewControllerAnimated:YES];
+    }
 }
 
 #pragma mark - 选择默认地址
@@ -158,7 +159,7 @@ static NSString *cellIdentifier = @"cellIdentifier";
 }
 
 - (void)setupTableView {
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, kMainScreenHeight - statusNavHeight - 48) style:UITableViewStylePlain];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, kMainScreenHeight - statusNavHeight - 48 - (tabBarHeight - 49)) style:UITableViewStylePlain];
     tableView.backgroundColor = UIColorFromRGB(0xF5F5F5);
     tableView.delegate = self;
     tableView.dataSource = self;
@@ -170,7 +171,7 @@ static NSString *cellIdentifier = @"cellIdentifier";
 }
 
 - (void)setupAddReceivingAddressButton {
-    UIButton *addReceivingAddressButton = [[UIButton alloc] initWithFrame:CGRectMake(0, kMainScreenHeight - statusNavHeight - 48, kMainScreenWidth, 48)];
+    UIButton *addReceivingAddressButton = [[UIButton alloc] initWithFrame:CGRectMake(0, kMainScreenHeight - statusNavHeight - 48 - (tabBarHeight - 49), kMainScreenWidth, 48)];
     addReceivingAddressButton.backgroundColor = COLOR_THEME;
     [addReceivingAddressButton setTitle:@"新增收货地址" forState:UIControlStateNormal];
     [addReceivingAddressButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];

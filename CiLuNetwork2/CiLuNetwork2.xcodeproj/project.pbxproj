@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C82E20322511C0E0060CB54 /* VENSalesManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C82E20222511C0E0060CB54 /* VENSalesManagementViewController.m */; };
 		2CDE859A2230107F004A87FE /* VENCustomerManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE85992230107F004A87FE /* VENCustomerManagementViewController.m */; };
 		2CDE859F22301274004A87FE /* VENCustomerManagementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE859D22301274004A87FE /* VENCustomerManagementTableViewCell.m */; };
 		2CDE85A022301274004A87FE /* VENCustomerManagementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CDE859E22301274004A87FE /* VENCustomerManagementTableViewCell.xib */; };
@@ -301,6 +302,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C82E20122511C0E0060CB54 /* VENSalesManagementViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VENSalesManagementViewController.h; sourceTree = "<group>"; };
+		2C82E20222511C0E0060CB54 /* VENSalesManagementViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VENSalesManagementViewController.m; sourceTree = "<group>"; };
 		2CDE85982230107F004A87FE /* VENCustomerManagementViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VENCustomerManagementViewController.h; sourceTree = "<group>"; };
 		2CDE85992230107F004A87FE /* VENCustomerManagementViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VENCustomerManagementViewController.m; sourceTree = "<group>"; };
 		2CDE859C22301274004A87FE /* VENCustomerManagementTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VENCustomerManagementTableViewCell.h; sourceTree = "<group>"; };
@@ -905,6 +908,8 @@
 		2CDE85972230100C004A87FE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2C82E20122511C0E0060CB54 /* VENSalesManagementViewController.h */,
+				2C82E20222511C0E0060CB54 /* VENSalesManagementViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3080,6 +3085,7 @@
 				2CEA884B222A806900EE543C /* JXCategoryDotCellModel.m in Sources */,
 				2CEA885E222A806900EE543C /* JXCategoryBaseCellModel.m in Sources */,
 				2CEA8889222A806900EE543C /* SDCycleScrollView.m in Sources */,
+				2C82E20322511C0E0060CB54 /* VENSalesManagementViewController.m in Sources */,
 				2CEA8832222A806900EE543C /* MJRefreshBackGifFooter.m in Sources */,
 				2CEA8A92222A859900EE543C /* VENPersonalDataInvitationCodePageViewController.m in Sources */,
 				2CEA8845222A806900EE543C /* JXCategoryIndicatorBackgroundView.m in Sources */,

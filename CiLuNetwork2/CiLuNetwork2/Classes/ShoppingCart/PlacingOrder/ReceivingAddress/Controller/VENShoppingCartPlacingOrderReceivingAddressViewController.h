@@ -12,5 +12,6 @@
 typedef void (^choiceAddressBlock)(VENShoppingCartPlacingOrderReceivingAddressModel *);
 @interface VENShoppingCartPlacingOrderReceivingAddressViewController : VENBaseViewController
 @property (nonatomic, copy) choiceAddressBlock block;
+@property (nonatomic, assign) BOOL isMinePage;
 
 @end

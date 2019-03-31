@@ -93,12 +93,36 @@ static NSString *cellIdentifier = @"cellIdentifier";
     return 48;
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    return [[UIView alloc] init];
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return section == 0 ? 10 : 5;
+    return 10;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    if (section == 2) {
+        UIView *footerView = [[UIView alloc] init];
+        UIButton *loginoutButton = [[UIButton alloc] initWithFrame:CGRectMake(15, 18, kMainScreenWidth - 30, 48)];
+        loginoutButton.backgroundColor = [UIColor whiteColor];
+        [loginoutButton setTitle:@"退出登录" forState:UIControlStateNormal];
+        [loginoutButton setTitleColor:UIColorFromRGB(0xD0021B) forState:UIControlStateNormal];
+        [loginoutButton addTarget:self action:@selector(loginoutButtonClick) forControlEvents:UIControlEventTouchUpInside];
+        loginoutButton.layer.cornerRadius = 4.0f;
+        loginoutButton.layer.masksToBounds = YES;
+        loginoutButton.layer.borderWidth = 1.0f;
+        loginoutButton.layer.borderColor = UIColorFromRGB(0xD0021B).CGColor;
+        [footerView addSubview:loginoutButton];
+        
+        return footerView;
+    } else {
+        return [[UIView alloc] init];
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 5;
+    return section == 2 ? 48 + 18 : 0.01;
 }
 
 - (void)setupTableView {
@@ -109,20 +133,6 @@ static NSString *cellIdentifier = @"cellIdentifier";
     [tableView registerNib:[UINib nibWithNibName:@"VENMineTableViewCellStyleOne" bundle:nil] forCellReuseIdentifier:cellIdentifier];
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:tableView];
-    
-    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, 48 + 18)];
-    tableView.tableFooterView = footerView;
-    
-    UIButton *loginoutButton = [[UIButton alloc] initWithFrame:CGRectMake(15, 18, kMainScreenWidth - 30, 48)];
-    loginoutButton.backgroundColor = [UIColor whiteColor];
-    [loginoutButton setTitle:@"退出登录" forState:UIControlStateNormal];
-    [loginoutButton setTitleColor:UIColorFromRGB(0xD0021B) forState:UIControlStateNormal];
-    [loginoutButton addTarget:self action:@selector(loginoutButtonClick) forControlEvents:UIControlEventTouchUpInside];
-    loginoutButton.layer.cornerRadius = 4.0f;
-    loginoutButton.layer.masksToBounds = YES;
-    loginoutButton.layer.borderWidth = 1.0f;
-    loginoutButton.layer.borderColor = UIColorFromRGB(0xD0021B).CGColor;
-    [footerView addSubview:loginoutButton];
 }
 
 - (void)loginoutButtonClick {
@@ -131,10 +141,10 @@ static NSString *cellIdentifier = @"cellIdentifier";
     // 登录
     [userDefaults removeObjectForKey:@"token"];
     
-    // 微信登录
-    [userDefaults removeObjectForKey:@"access_token"];
-    [userDefaults removeObjectForKey:@"openid"];
-    [userDefaults removeObjectForKey:@"refresh_token"];
+//    // 微信登录
+//    [userDefaults removeObjectForKey:@"access_token"];
+//    [userDefaults removeObjectForKey:@"openid"];
+//    [userDefaults removeObjectForKey:@"refresh_token"];
 
     self.block(@"loginoutSuccess");
     [[NSNotificationCenter defaultCenter] postNotificationName:@"Logout" object:nil];

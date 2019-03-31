@@ -77,7 +77,7 @@ static NSString *cellIdentifier = @"cellIdentifier";
 }
 
 - (void)setupTableView {
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, kMainScreenHeight - statusNavHeight - 48) style:UITableViewStylePlain];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, kMainScreenHeight - statusNavHeight - 48 - (tabBarHeight - 49)) style:UITableViewStylePlain];
     tableView.backgroundColor = UIColorFromRGB(0xF5F5F5);
     tableView.delegate = self;
     tableView.dataSource = self;
@@ -89,7 +89,7 @@ static NSString *cellIdentifier = @"cellIdentifier";
 }
 
 - (void)setupAddReceivingAddressButton {
-    UIButton *addReceivingAddressButton = [[UIButton alloc] initWithFrame:CGRectMake(0, kMainScreenHeight - statusNavHeight - 48, kMainScreenWidth, 48)];
+    UIButton *addReceivingAddressButton = [[UIButton alloc] initWithFrame:CGRectMake(0, kMainScreenHeight - statusNavHeight - 48 - (tabBarHeight - 49), kMainScreenWidth, 48)];
     addReceivingAddressButton.backgroundColor = COLOR_THEME;
     [addReceivingAddressButton setTitle:@"添加客户" forState:UIControlStateNormal];
     [addReceivingAddressButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
