@@ -12,6 +12,9 @@
 		2C23BB31225A53AA00BD7D09 /* VENSalesManagementModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C23BB30225A53AA00BD7D09 /* VENSalesManagementModel.m */; };
 		2C23BB35225A54BE00BD7D09 /* VENSalesManagementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C23BB33225A54BE00BD7D09 /* VENSalesManagementTableViewCell.m */; };
 		2C23BB36225A54BE00BD7D09 /* VENSalesManagementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C23BB34225A54BE00BD7D09 /* VENSalesManagementTableViewCell.xib */; };
+		2C3233C7225CE7F40089B01A /* VENHomePageHorizontalCollectionView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3233C6225CE7F40089B01A /* VENHomePageHorizontalCollectionView2.m */; };
+		2C3233CB225CE80F0089B01A /* VENHomePageHorizontalCollectionViewCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3233C9225CE80F0089B01A /* VENHomePageHorizontalCollectionViewCell2.m */; };
+		2C3233CC225CE80F0089B01A /* VENHomePageHorizontalCollectionViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3233CA225CE80F0089B01A /* VENHomePageHorizontalCollectionViewCell2.xib */; };
 		2C82E20322511C0E0060CB54 /* VENSalesManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C82E20222511C0E0060CB54 /* VENSalesManagementViewController.m */; };
 		2CDE859A2230107F004A87FE /* VENCustomerManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE85992230107F004A87FE /* VENCustomerManagementViewController.m */; };
 		2CDE859F22301274004A87FE /* VENCustomerManagementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE859D22301274004A87FE /* VENCustomerManagementTableViewCell.m */; };
@@ -201,7 +204,6 @@
 		2CEA8A36222A859900EE543C /* VENHomePageHorizontalCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEA8900222A859800EE543C /* VENHomePageHorizontalCollectionView.m */; };
 		2CEA8A37222A859900EE543C /* VENHomePageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEA8901222A859800EE543C /* VENHomePageCollectionViewCell.m */; };
 		2CEA8A38222A859900EE543C /* VENHomePageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CEA8902222A859800EE543C /* VENHomePageCollectionViewCell.xib */; };
-		2CEA8A39222A859900EE543C /* VENHomePageNavigationItemTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEA8904222A859800EE543C /* VENHomePageNavigationItemTitleView.m */; };
 		2CEA8A3A222A859900EE543C /* VENVerificationOfPhoneNumberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CEA890A222A859800EE543C /* VENVerificationOfPhoneNumberViewController.xib */; };
 		2CEA8A3C222A859900EE543C /* VENSetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEA890C222A859800EE543C /* VENSetPasswordViewController.m */; };
 		2CEA8A3D222A859900EE543C /* VENVerificationOfPhoneNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEA890F222A859800EE543C /* VENVerificationOfPhoneNumberViewController.m */; };
@@ -316,6 +318,11 @@
 		2C23BB32225A54BE00BD7D09 /* VENSalesManagementTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VENSalesManagementTableViewCell.h; sourceTree = "<group>"; };
 		2C23BB33225A54BE00BD7D09 /* VENSalesManagementTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VENSalesManagementTableViewCell.m; sourceTree = "<group>"; };
 		2C23BB34225A54BE00BD7D09 /* VENSalesManagementTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VENSalesManagementTableViewCell.xib; sourceTree = "<group>"; };
+		2C3233C5225CE7F40089B01A /* VENHomePageHorizontalCollectionView2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VENHomePageHorizontalCollectionView2.h; sourceTree = "<group>"; };
+		2C3233C6225CE7F40089B01A /* VENHomePageHorizontalCollectionView2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VENHomePageHorizontalCollectionView2.m; sourceTree = "<group>"; };
+		2C3233C8225CE80F0089B01A /* VENHomePageHorizontalCollectionViewCell2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VENHomePageHorizontalCollectionViewCell2.h; sourceTree = "<group>"; };
+		2C3233C9225CE80F0089B01A /* VENHomePageHorizontalCollectionViewCell2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VENHomePageHorizontalCollectionViewCell2.m; sourceTree = "<group>"; };
+		2C3233CA225CE80F0089B01A /* VENHomePageHorizontalCollectionViewCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VENHomePageHorizontalCollectionViewCell2.xib; sourceTree = "<group>"; };
 		2C82E20122511C0E0060CB54 /* VENSalesManagementViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VENSalesManagementViewController.h; sourceTree = "<group>"; };
 		2C82E20222511C0E0060CB54 /* VENSalesManagementViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VENSalesManagementViewController.m; sourceTree = "<group>"; };
 		2CDE85982230107F004A87FE /* VENCustomerManagementViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VENCustomerManagementViewController.h; sourceTree = "<group>"; };
@@ -700,8 +707,6 @@
 		2CEA8900222A859800EE543C /* VENHomePageHorizontalCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VENHomePageHorizontalCollectionView.m; sourceTree = "<group>"; };
 		2CEA8901222A859800EE543C /* VENHomePageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VENHomePageCollectionViewCell.m; sourceTree = "<group>"; };
 		2CEA8902222A859800EE543C /* VENHomePageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VENHomePageCollectionViewCell.xib; sourceTree = "<group>"; };
-		2CEA8904222A859800EE543C /* VENHomePageNavigationItemTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VENHomePageNavigationItemTitleView.m; sourceTree = "<group>"; };
-		2CEA8905222A859800EE543C /* VENHomePageNavigationItemTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VENHomePageNavigationItemTitleView.h; sourceTree = "<group>"; };
 		2CEA8909222A859800EE543C /* VENVerificationOfPhoneNumberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VENVerificationOfPhoneNumberViewController.h; sourceTree = "<group>"; };
 		2CEA890A222A859800EE543C /* VENVerificationOfPhoneNumberViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VENVerificationOfPhoneNumberViewController.xib; sourceTree = "<group>"; };
 		2CEA890C222A859800EE543C /* VENSetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VENSetPasswordViewController.m; sourceTree = "<group>"; };
@@ -913,6 +918,18 @@
 				2C23BB30225A53AA00BD7D09 /* VENSalesManagementModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2C3233C4225CE7C70089B01A /* HorizontalCollectionView2 */ = {
+			isa = PBXGroup;
+			children = (
+				2C3233C5225CE7F40089B01A /* VENHomePageHorizontalCollectionView2.h */,
+				2C3233C6225CE7F40089B01A /* VENHomePageHorizontalCollectionView2.m */,
+				2C3233C8225CE80F0089B01A /* VENHomePageHorizontalCollectionViewCell2.h */,
+				2C3233C9225CE80F0089B01A /* VENHomePageHorizontalCollectionViewCell2.m */,
+				2C3233CA225CE80F0089B01A /* VENHomePageHorizontalCollectionViewCell2.xib */,
+			);
+			path = HorizontalCollectionView2;
 			sourceTree = "<group>";
 		};
 		2CDE859422300FC4004A87FE /* CustomerManagement */ = {
@@ -1922,9 +1939,9 @@
 		2CEA88EF222A859800EE543C /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
-				2CEA88F0222A859800EE543C /* Controller */,
 				2CEA88F3222A859800EE543C /* Model */,
 				2CEA88F6222A859800EE543C /* View */,
+				2CEA88F0222A859800EE543C /* Controller */,
 			);
 			path = HomePage;
 			sourceTree = "<group>";
@@ -1941,8 +1958,8 @@
 		2CEA88F3222A859800EE543C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2CEA88F4222A859800EE543C /* VENHomePageModel.m */,
 				2CEA88F5222A859800EE543C /* VENHomePageModel.h */,
+				2CEA88F4222A859800EE543C /* VENHomePageModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1950,12 +1967,12 @@
 		2CEA88F6222A859800EE543C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2C3233C4225CE7C70089B01A /* HorizontalCollectionView2 */,
+				2CEA88FB222A859800EE543C /* HorizontalCollectionView */,
 				2CEA88F7222A859800EE543C /* CollectionViewHeaderView */,
 				2CEA88FA222A859800EE543C /* VENHomePageCollectionViewCell.h */,
-				2CEA88FB222A859800EE543C /* HorizontalCollectionView */,
 				2CEA8901222A859800EE543C /* VENHomePageCollectionViewCell.m */,
 				2CEA8902222A859800EE543C /* VENHomePageCollectionViewCell.xib */,
-				2CEA8903222A859800EE543C /* NavigationItemTitleView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1963,8 +1980,8 @@
 		2CEA88F7222A859800EE543C /* CollectionViewHeaderView */ = {
 			isa = PBXGroup;
 			children = (
-				2CEA88F8222A859800EE543C /* VENHomePageCollectionViewHeaderView.m */,
 				2CEA88F9222A859800EE543C /* VENHomePageCollectionViewHeaderView.h */,
+				2CEA88F8222A859800EE543C /* VENHomePageCollectionViewHeaderView.m */,
 			);
 			path = CollectionViewHeaderView;
 			sourceTree = "<group>";
@@ -1972,22 +1989,13 @@
 		2CEA88FB222A859800EE543C /* HorizontalCollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				2CEA88FC222A859800EE543C /* VENHomePageHorizontalCollectionViewCell.xib */,
-				2CEA88FD222A859800EE543C /* VENHomePageHorizontalCollectionViewCell.m */,
 				2CEA88FE222A859800EE543C /* VENHomePageHorizontalCollectionView.h */,
-				2CEA88FF222A859800EE543C /* VENHomePageHorizontalCollectionViewCell.h */,
 				2CEA8900222A859800EE543C /* VENHomePageHorizontalCollectionView.m */,
+				2CEA88FF222A859800EE543C /* VENHomePageHorizontalCollectionViewCell.h */,
+				2CEA88FD222A859800EE543C /* VENHomePageHorizontalCollectionViewCell.m */,
+				2CEA88FC222A859800EE543C /* VENHomePageHorizontalCollectionViewCell.xib */,
 			);
 			path = HorizontalCollectionView;
-			sourceTree = "<group>";
-		};
-		2CEA8903222A859800EE543C /* NavigationItemTitleView */ = {
-			isa = PBXGroup;
-			children = (
-				2CEA8904222A859800EE543C /* VENHomePageNavigationItemTitleView.m */,
-				2CEA8905222A859800EE543C /* VENHomePageNavigationItemTitleView.h */,
-			);
-			path = NavigationItemTitleView;
 			sourceTree = "<group>";
 		};
 		2CEA8906222A859800EE543C /* Login&Regist */ = {
@@ -2039,8 +2047,8 @@
 		2CEA8920222A859800EE543C /* Classify */ = {
 			isa = PBXGroup;
 			children = (
-				2CEA8921222A859800EE543C /* Details */,
 				2CEA8942222A859800EE543C /* Main */,
+				2CEA8921222A859800EE543C /* Details */,
 			);
 			path = Classify;
 			sourceTree = "<group>";
@@ -2048,8 +2056,8 @@
 		2CEA8921222A859800EE543C /* Details */ = {
 			isa = PBXGroup;
 			children = (
-				2CEA8922222A859800EE543C /* UserEvaluate */,
 				2CEA892D222A859800EE543C /* Main */,
+				2CEA8922222A859800EE543C /* UserEvaluate */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -2164,9 +2172,9 @@
 		2CEA8942222A859800EE543C /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				2CEA8943222A859800EE543C /* Controller */,
 				2CEA894B222A859800EE543C /* Model */,
 				2CEA894E222A859800EE543C /* View */,
+				2CEA8943222A859800EE543C /* Controller */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -2177,8 +2185,8 @@
 				2CEA8944222A859800EE543C /* VENClassifyViewController.h */,
 				2CEA8945222A859800EE543C /* VENClassifyCollectionViewController.m */,
 				2CEA8946222A859800EE543C /* Search */,
-				2CEA8949222A859800EE543C /* VENClassifyViewController.m */,
 				2CEA894A222A859800EE543C /* VENClassifyCollectionViewController.h */,
+				2CEA8949222A859800EE543C /* VENClassifyViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2975,6 +2983,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CEA8A7D222A859900EE543C /* VENMyBalanceRechargeTableViewCell.xib in Resources */,
+				2C3233CC225CE80F0089B01A /* VENHomePageHorizontalCollectionViewCell2.xib in Resources */,
 				2CEA86AD222A7BC500EE543C /* LaunchScreen.storyboard in Resources */,
 				2CEA8A6D222A859900EE543C /* VENMyOrderOrderDetailsHeaderView.xib in Resources */,
 				2CEA8A38222A859900EE543C /* VENHomePageCollectionViewCell.xib in Resources */,
@@ -3037,7 +3046,6 @@
 				2CEA881B222A806900EE543C /* ZLCameraViewController.m in Sources */,
 				2CEA8868222A806900EE543C /* MASViewAttribute.m in Sources */,
 				2CEA8A62222A859900EE543C /* VENMyEvaluationModel.m in Sources */,
-				2CEA8A39222A859900EE543C /* VENHomePageNavigationItemTitleView.m in Sources */,
 				2CEA8828222A806900EE543C /* LGPhotoPickerCollectionView.m in Sources */,
 				2CEA8A67222A859900EE543C /* VENMyPointsHeaderViewTableViewCell.m in Sources */,
 				2CEA887C222A806900EE543C /* UIImageView+AFNetworking.m in Sources */,
@@ -3125,6 +3133,7 @@
 				2CEA8834222A806900EE543C /* MJRefreshBackNormalFooter.m in Sources */,
 				2CEA8A79222A859900EE543C /* VENMyOrderTableViewCell.m in Sources */,
 				2CEA8A9B222A859900EE543C /* VENMineModel.m in Sources */,
+				2C3233CB225CE80F0089B01A /* VENHomePageHorizontalCollectionViewCell2.m in Sources */,
 				2CEA86A2222A7BC400EE543C /* AppDelegate.m in Sources */,
 				2CEA8A2E222A859900EE543C /* VENShoppingCartModel.m in Sources */,
 				2CEA8A48222A859900EE543C /* VENClassifyDetailsUserEvaluateTableViewCell.m in Sources */,
@@ -3243,6 +3252,7 @@
 				2CEA8876222A806900EE543C /* IQUIView+Hierarchy.m in Sources */,
 				2CEA8A26222A859900EE543C /* VENShoppingCartPlacingOrderPaymentOrderModel.m in Sources */,
 				2CEA885F222A806900EE543C /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				2C3233C7225CE7F40089B01A /* VENHomePageHorizontalCollectionView2.m in Sources */,
 				2CEA887B222A806900EE543C /* AFNetworkActivityIndicatorManager.m in Sources */,
 				2CEA8A95222A859900EE543C /* VENResetPasswordViewController.m in Sources */,
 				2CEA8A28222A859900EE543C /* VENShoppingCartPlacingOrderPaymentOrderTableViewCell.m in Sources */,

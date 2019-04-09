@@ -7,15 +7,15 @@
 //
 
 #import "VENHomePageViewController.h"
-#import "VENHomePageNavigationItemTitleView.h"
 #import "VENHomePageCollectionViewCell.h"
 #import "VENHomePageHorizontalCollectionView.h"
 #import "VENHomePageCollectionViewHeaderView.h"
 #import "VENHomePageModel.h"
 #import "VENClassifyDetailsViewController.h"
 #import "VENClassifySearchViewController.h"
+#import "VENHomePageHorizontalCollectionView2.h"
 
-@interface VENHomePageViewController () <SDCycleScrollViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@interface VENHomePageViewController () <SDCycleScrollViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITextFieldDelegate>
 @property (nonatomic, strong) UICollectionView *collectionView;
 
 @property (nonatomic, copy) NSArray *banners;
@@ -25,6 +25,7 @@
 
 @property (nonatomic, strong) SDCycleScrollView *cycleScrollView;
 @property (nonatomic, strong) VENHomePageHorizontalCollectionView *horizontalCollectionView;
+@property (nonatomic, strong) VENHomePageHorizontalCollectionView2 *horizontalCollectionView2;
 @property (nonatomic, strong) VENHomePageCollectionViewHeaderView *collectionViewHeaderView2;
 
 @end
@@ -42,7 +43,7 @@
     // Do any additional setup after loading the view.
     
     [self setupNavigationItemLeftBarButtonItem];
-    [self setupNavigationItemRightBarButtonItem];
+    [self setupSearchView];
     [self setupCollectionView];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationCenter:) name:@"ResetHomePage" object:nil];
@@ -83,10 +84,10 @@
             
             [self setupCycleScrollView];
             [self setupHorizontalCollectionView];
-            [self setupNavigationItemTitleView];
+            [self setupHorizontalCollectionView2];
             
             [self.collectionView reloadData];
-            self.collectionViewHeaderView2.frame = CGRectMake(0, 327 + ceilf(self.hotGoods.count / 2.0) * 248 + ceilf(self.hotGoods.count / 2.0) * 10,  kMainScreenWidth, 62);
+            self.collectionViewHeaderView2.frame = CGRectMake(0, 327 + 137 + ceilf(self.hotGoods.count / 2.0) * 248 + ceilf(self.hotGoods.count / 2.0) * 10,  kMainScreenWidth, 62);
         }
     } failureBlock:^(NSError *error) {
         [self.collectionView.mj_header endRefreshing];
@@ -127,7 +128,7 @@
 
 - (CGSize)collectionView:(UICollectionView*)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
     
-    return section == 0 ? CGSizeMake(kMainScreenWidth, 327 - 10) : CGSizeMake(kMainScreenWidth, 62 - 10);
+    return section == 0 ? CGSizeMake(kMainScreenWidth, 327 + 137 - 10) : CGSizeMake(kMainScreenWidth, 62 - 10);
 }
 
 - (void)setupCollectionView {
@@ -149,7 +150,7 @@
     [self.view addSubview:collectionView];
     
     // 分割线 + 标题
-    VENHomePageCollectionViewHeaderView *collectionViewHeaderView = [[VENHomePageCollectionViewHeaderView alloc] initWithFrame:CGRectMake(0, 265, kMainScreenWidth, 62)];
+    VENHomePageCollectionViewHeaderView *collectionViewHeaderView = [[VENHomePageCollectionViewHeaderView alloc] initWithFrame:CGRectMake(0, 265 + 137, kMainScreenWidth, 62)];
     collectionViewHeaderView.title = @"热门推荐";
     [collectionView addSubview:collectionViewHeaderView];
     
@@ -204,6 +205,24 @@
     }
 }
 
+#pragma mark - 基金会
+- (void)setupHorizontalCollectionView2 {
+    
+    [self.horizontalCollectionView2 removeFromSuperview];
+    self.horizontalCollectionView2 = nil;
+    
+    if (self.horizontalCollectionView2 == nil) {
+        // 分类图标
+        VENHomePageHorizontalCollectionView2 *horizontalCollectionView2 = [[VENHomePageHorizontalCollectionView2 alloc] initWithFrame:CGRectMake(0, 160, kMainScreenWidth, 137)];
+        horizontalCollectionView2.pushToFoundationPageBlock = ^(NSString *str) {
+            
+        };
+        [self.collectionView addSubview:horizontalCollectionView2];
+        
+        _horizontalCollectionView2 = horizontalCollectionView2;
+    }
+}
+
 #pragma mark - 分类
 - (void)setupHorizontalCollectionView {
 
@@ -212,7 +231,7 @@
     
     if (self.horizontalCollectionView == nil) {
         // 分类图标
-        VENHomePageHorizontalCollectionView *horizontalCollectionView = [[VENHomePageHorizontalCollectionView alloc] initWithFrame:CGRectMake(0, 160, kMainScreenWidth, 105)];
+        VENHomePageHorizontalCollectionView *horizontalCollectionView = [[VENHomePageHorizontalCollectionView alloc] initWithFrame:CGRectMake(0, 160 + 137, kMainScreenWidth, 105)];
         horizontalCollectionView.categoriesModel = self.categories;
         horizontalCollectionView.block = ^(NSString *str) {
             self.tabBarController.selectedIndex = 1;
@@ -223,27 +242,9 @@
     }
 }
 
-- (void)setupNavigationItemRightBarButtonItem {
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-//    button.contentEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0);
-    [button setImage:[UIImage imageNamed:@"icon_search01"] forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(rightButtonClick) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:button];
-    self.navigationItem.rightBarButtonItem = barButton;
-}
-
-#pragma mark - 搜索
-- (void)rightButtonClick {
-    NSLog(@"右边");
-    
-    VENClassifySearchViewController *vc = [[VENClassifySearchViewController alloc] init];
-    vc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:vc animated:YES];
-}
-
 - (void)setupNavigationItemLeftBarButtonItem {
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-//    button.contentEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0);
+    button.contentEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 0);
     [button setImage:[UIImage imageNamed:@"icon_class"] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(leftButtonClick) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:button];
@@ -256,32 +257,35 @@
     self.tabBarController.selectedIndex = 1;
 }
 
-- (void)setupNavigationItemTitleView {
-    CGFloat titleViewWidth = 212.0f;
+- (void)setupSearchView {
+    UITextField *searchTextField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth - 74, 30)];
+    searchTextField.delegate = self;
+    searchTextField.font = [UIFont systemFontOfSize:12.0f];
+    searchTextField.backgroundColor = UIColorFromRGB(0xF1F1F1);
+    searchTextField.placeholder = @"请输入关键词搜索";
     
-    VENHomePageNavigationItemTitleView *titleView = [[VENHomePageNavigationItemTitleView alloc] initWithFrame:CGRectMake(0, 0, titleViewWidth, 44)];
-    titleView.titleViewWidth = titleViewWidth;
-    titleView.buttonClickBlock = ^(NSString *str) {
-        
-        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-        NSDictionary *metaData = [userDefaults objectForKey:@"metaData"];
-        
-        if ([str isEqualToString:@"left"]) {
-            NSLog(@"left");
-            
-            [userDefaults setObject:metaData[@"foundationList"][0][@"id"] forKey:@"tag"];
-            [self.collectionView.mj_header beginRefreshing];
-        } else if ([str isEqualToString:@"right"]) {
-            NSLog(@"right");
-            
-            [userDefaults setObject:metaData[@"foundationList"][1][@"id"] forKey:@"tag"];
-            [self.collectionView.mj_header beginRefreshing];
-        }
-        
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"Reset" object:nil];
-    };
+    searchTextField.layer.cornerRadius = 4.0f;
+    searchTextField.layer.masksToBounds = YES;
     
-    self.navigationItem.titleView = titleView;
+    UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 34, 30)];
+    
+    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 30 / 2 - 14 / 2, 14, 14)];
+    imgView.image = [UIImage imageNamed:@"icon_search02"];
+    [leftView addSubview:imgView];
+    
+    searchTextField.leftView = leftView;
+    searchTextField.leftViewMode = UITextFieldViewModeAlways;
+    self.navigationItem.titleView = searchTextField;
+}
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"RemoveFilterView" object:nil];
+    
+    VENClassifySearchViewController *vc = [[VENClassifySearchViewController alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+    
+    return NO;
 }
 
 - (void)dealloc {

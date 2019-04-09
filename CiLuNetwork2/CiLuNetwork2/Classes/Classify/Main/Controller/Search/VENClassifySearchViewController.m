@@ -159,7 +159,7 @@
 }
 
 - (void)setupSearchBar {
-    UITextField *searchTextField = [[UITextField alloc] initWithFrame:CGRectMake(15, 27, kMainScreenWidth - 30 - 15 - 32, 30)];
+    UITextField *searchTextField = [[UITextField alloc] initWithFrame:CGRectMake(15, 27 + statusNavHeight - 64, kMainScreenWidth - 30 - 15 - 32, 30)];
     searchTextField.font = [UIFont systemFontOfSize:12.0f];
     searchTextField.backgroundColor = UIColorFromRGB(0xF1F1F1);
     searchTextField.placeholder = @"请输入关键词搜索";
@@ -182,7 +182,7 @@
     
     [self.view addSubview:searchTextField];
     
-    UIButton *cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(kMainScreenWidth - 15 - 32, 27 + 30 / 2 - 20 / 2, 32, 20)];
+    UIButton *cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(kMainScreenWidth - 15 - 32, 27 + 30 / 2 - 20 / 2 + (statusNavHeight - 64), 32, 20)];
     [cancelButton setTitle:@"取消" forState:UIControlStateNormal];
     cancelButton.titleLabel.font = [UIFont systemFontOfSize:14.0f];
     [cancelButton setTitleColor:UIColorFromRGB(0x333333) forState:UIControlStateNormal];
