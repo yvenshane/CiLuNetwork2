@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C062FB9225249C0004A0F7F /* VENSalesManagementHeaderViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C062FB7225249C0004A0F7F /* VENSalesManagementHeaderViewTableViewCell.m */; };
+		2C062FBA225249C0004A0F7F /* VENSalesManagementHeaderViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C062FB8225249C0004A0F7F /* VENSalesManagementHeaderViewTableViewCell.xib */; };
+		2C23BB31225A53AA00BD7D09 /* VENSalesManagementModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C23BB30225A53AA00BD7D09 /* VENSalesManagementModel.m */; };
+		2C23BB35225A54BE00BD7D09 /* VENSalesManagementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C23BB33225A54BE00BD7D09 /* VENSalesManagementTableViewCell.m */; };
+		2C23BB36225A54BE00BD7D09 /* VENSalesManagementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C23BB34225A54BE00BD7D09 /* VENSalesManagementTableViewCell.xib */; };
 		2C82E20322511C0E0060CB54 /* VENSalesManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C82E20222511C0E0060CB54 /* VENSalesManagementViewController.m */; };
 		2CDE859A2230107F004A87FE /* VENCustomerManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE85992230107F004A87FE /* VENCustomerManagementViewController.m */; };
 		2CDE859F22301274004A87FE /* VENCustomerManagementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE859D22301274004A87FE /* VENCustomerManagementTableViewCell.m */; };
@@ -299,9 +304,18 @@
 		2CEA8A9F222A859900EE543C /* VENMineTableViewCellStyleThree.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CEA8A14222A859800EE543C /* VENMineTableViewCellStyleThree.xib */; };
 		2CEA8AA0222A859900EE543C /* VENMineTableViewCellStyleOne.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CEA8A15222A859800EE543C /* VENMineTableViewCellStyleOne.xib */; };
 		2CEA8AA1222A859900EE543C /* VENMineTableViewCellStyleOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEA8A17222A859800EE543C /* VENMineTableViewCellStyleOne.m */; };
+		2CEBB9A62254448E006DDED4 /* VENDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEBB9A52254448E006DDED4 /* VENDatePickerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C062FB6225249C0004A0F7F /* VENSalesManagementHeaderViewTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VENSalesManagementHeaderViewTableViewCell.h; sourceTree = "<group>"; };
+		2C062FB7225249C0004A0F7F /* VENSalesManagementHeaderViewTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VENSalesManagementHeaderViewTableViewCell.m; sourceTree = "<group>"; };
+		2C062FB8225249C0004A0F7F /* VENSalesManagementHeaderViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VENSalesManagementHeaderViewTableViewCell.xib; sourceTree = "<group>"; };
+		2C23BB2F225A53AA00BD7D09 /* VENSalesManagementModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VENSalesManagementModel.h; sourceTree = "<group>"; };
+		2C23BB30225A53AA00BD7D09 /* VENSalesManagementModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VENSalesManagementModel.m; sourceTree = "<group>"; };
+		2C23BB32225A54BE00BD7D09 /* VENSalesManagementTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VENSalesManagementTableViewCell.h; sourceTree = "<group>"; };
+		2C23BB33225A54BE00BD7D09 /* VENSalesManagementTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VENSalesManagementTableViewCell.m; sourceTree = "<group>"; };
+		2C23BB34225A54BE00BD7D09 /* VENSalesManagementTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VENSalesManagementTableViewCell.xib; sourceTree = "<group>"; };
 		2C82E20122511C0E0060CB54 /* VENSalesManagementViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VENSalesManagementViewController.h; sourceTree = "<group>"; };
 		2C82E20222511C0E0060CB54 /* VENSalesManagementViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VENSalesManagementViewController.m; sourceTree = "<group>"; };
 		2CDE85982230107F004A87FE /* VENCustomerManagementViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VENCustomerManagementViewController.h; sourceTree = "<group>"; };
@@ -863,6 +877,8 @@
 		2CEA8A16222A859800EE543C /* VENMineTableViewCellStyleTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VENMineTableViewCellStyleTwo.h; sourceTree = "<group>"; };
 		2CEA8A17222A859800EE543C /* VENMineTableViewCellStyleOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VENMineTableViewCellStyleOne.m; sourceTree = "<group>"; };
 		2CEA8A18222A859800EE543C /* VENMineTableViewCellStyleThree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VENMineTableViewCellStyleThree.h; sourceTree = "<group>"; };
+		2CEBB9A42254448E006DDED4 /* VENDatePickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VENDatePickerView.h; sourceTree = "<group>"; };
+		2CEBB9A52254448E006DDED4 /* VENDatePickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VENDatePickerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -876,6 +892,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C062FB522524980004A0F7F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2CEBB9A322544417006DDED4 /* DatePicker */,
+				2C062FB6225249C0004A0F7F /* VENSalesManagementHeaderViewTableViewCell.h */,
+				2C062FB7225249C0004A0F7F /* VENSalesManagementHeaderViewTableViewCell.m */,
+				2C062FB8225249C0004A0F7F /* VENSalesManagementHeaderViewTableViewCell.xib */,
+				2C23BB32225A54BE00BD7D09 /* VENSalesManagementTableViewCell.h */,
+				2C23BB33225A54BE00BD7D09 /* VENSalesManagementTableViewCell.m */,
+				2C23BB34225A54BE00BD7D09 /* VENSalesManagementTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2C23BB2E225A536900BD7D09 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2C23BB2F225A53AA00BD7D09 /* VENSalesManagementModel.h */,
+				2C23BB30225A53AA00BD7D09 /* VENSalesManagementModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		2CDE859422300FC4004A87FE /* CustomerManagement */ = {
 			isa = PBXGroup;
 			children = (
@@ -889,6 +928,8 @@
 		2CDE859522300FF7004A87FE /* SalesManagement */ = {
 			isa = PBXGroup;
 			children = (
+				2C23BB2E225A536900BD7D09 /* Model */,
+				2C062FB522524980004A0F7F /* View */,
 				2CDE85972230100C004A87FE /* Controller */,
 			);
 			path = SalesManagement;
@@ -2670,9 +2711,9 @@
 		2CEA89DA222A859800EE543C /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				2CEA89DB222A859800EE543C /* Controller */,
 				2CEA89DE222A859800EE543C /* Model */,
 				2CEA89E1222A859800EE543C /* View */,
+				2CEA89DB222A859800EE543C /* Controller */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -2680,8 +2721,8 @@
 		2CEA89DB222A859800EE543C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2CEA89DC222A859800EE543C /* VENMyBalanceViewController.m */,
 				2CEA89DD222A859800EE543C /* VENMyBalanceViewController.h */,
+				2CEA89DC222A859800EE543C /* VENMyBalanceViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2689,8 +2730,8 @@
 		2CEA89DE222A859800EE543C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2CEA89DF222A859800EE543C /* VENMyBalanceModel.m */,
 				2CEA89E0222A859800EE543C /* VENMyBalanceModel.h */,
+				2CEA89DF222A859800EE543C /* VENMyBalanceModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2698,12 +2739,12 @@
 		2CEA89E1222A859800EE543C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2CEA89E2222A859800EE543C /* VENMyBalanceTableViewCell.m */,
-				2CEA89E3222A859800EE543C /* VENMyBalanceHeaderViewTableViewCell.m */,
-				2CEA89E4222A859800EE543C /* VENMyBalanceTableViewCell.xib */,
-				2CEA89E5222A859800EE543C /* VENMyBalanceHeaderViewTableViewCell.xib */,
 				2CEA89E6222A859800EE543C /* VENMyBalanceHeaderViewTableViewCell.h */,
+				2CEA89E3222A859800EE543C /* VENMyBalanceHeaderViewTableViewCell.m */,
+				2CEA89E5222A859800EE543C /* VENMyBalanceHeaderViewTableViewCell.xib */,
 				2CEA89E7222A859800EE543C /* VENMyBalanceTableViewCell.h */,
+				2CEA89E2222A859800EE543C /* VENMyBalanceTableViewCell.m */,
+				2CEA89E4222A859800EE543C /* VENMyBalanceTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2867,6 +2908,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		2CEBB9A322544417006DDED4 /* DatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				2CEBB9A42254448E006DDED4 /* VENDatePickerView.h */,
+				2CEBB9A52254448E006DDED4 /* VENDatePickerView.m */,
+			);
+			path = DatePicker;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2938,7 +2988,9 @@
 				2CEA8A44222A859900EE543C /* VENLoginViewController.xib in Resources */,
 				2CEA8A2A222A859900EE543C /* VENShoppingCartPlacingOrderPaymentOrderTableViewCell.xib in Resources */,
 				2CEA8AA0222A859900EE543C /* VENMineTableViewCellStyleOne.xib in Resources */,
+				2C23BB36225A54BE00BD7D09 /* VENSalesManagementTableViewCell.xib in Resources */,
 				2CEA8A86222A859900EE543C /* VENMyBalanceWithdrawTableViewCell2.xib in Resources */,
+				2C062FBA225249C0004A0F7F /* VENSalesManagementHeaderViewTableViewCell.xib in Resources */,
 				2CEA86AA222A7BC500EE543C /* Assets.xcassets in Resources */,
 				2CEA8A9F222A859900EE543C /* VENMineTableViewCellStyleThree.xib in Resources */,
 				2CEA8A78222A859900EE543C /* VENMyOrderTableViewCell.xib in Resources */,
@@ -3030,6 +3082,7 @@
 				2CEA8883222A806900EE543C /* AFHTTPSessionManager.m in Sources */,
 				2CEA88B7222A81E200EE543C /* VENNavigationController.m in Sources */,
 				2CEA8A89222A859900EE543C /* VENMyBalanceModel.m in Sources */,
+				2C062FB9225249C0004A0F7F /* VENSalesManagementHeaderViewTableViewCell.m in Sources */,
 				2CEA8A6A222A859900EE543C /* VENMyOrderOrderDetailsViewController.m in Sources */,
 				2CEA8A2F222A859900EE543C /* VENShoppingCartTableViewCell.m in Sources */,
 				2CEA889A222A806900EE543C /* NSData+ImageContentType.m in Sources */,
@@ -3127,6 +3180,7 @@
 				2CEA8894222A806900EE543C /* UIImage+GIF.m in Sources */,
 				2CEA8880222A806900EE543C /* AFAutoPurgingImageCache.m in Sources */,
 				2CEA8833222A806900EE543C /* MJRefreshBackStateFooter.m in Sources */,
+				2C23BB31225A53AA00BD7D09 /* VENSalesManagementModel.m in Sources */,
 				2CEA8A6C222A859900EE543C /* VENMyOrderOrderDetailsModel.m in Sources */,
 				2CEA8A9A222A859900EE543C /* VENMineViewController.m in Sources */,
 				2CEA8A1F222A859900EE543C /* VENCityPickerView.m in Sources */,
@@ -3183,6 +3237,7 @@
 				2CEA8A35222A859900EE543C /* VENHomePageHorizontalCollectionViewCell.m in Sources */,
 				2CEA8A4C222A859900EE543C /* VENClassifyDetailsToolBarView.m in Sources */,
 				2CEA884E222A806900EE543C /* JXCategoryTitleImageCellModel.m in Sources */,
+				2CEBB9A62254448E006DDED4 /* VENDatePickerView.m in Sources */,
 				2CEA8814222A806900EE543C /* LGPhotoPickerBrowserPhoto.m in Sources */,
 				2CEA8A46222A859900EE543C /* VENClassifyDetailsUserEvaluateViewController.m in Sources */,
 				2CEA8876222A806900EE543C /* IQUIView+Hierarchy.m in Sources */,
@@ -3216,6 +3271,7 @@
 				2CEA88B6222A81E200EE543C /* VENTabBarController.m in Sources */,
 				2CEA8A5A222A859900EE543C /* VENMyTeamSubviewsTableViewCell.m in Sources */,
 				2CEA8822222A806900EE543C /* LGPhotoAssets.m in Sources */,
+				2C23BB35225A54BE00BD7D09 /* VENSalesManagementTableViewCell.m in Sources */,
 				2CEA88AC222A808B00EE543C /* VENMBProgressHUDManager.m in Sources */,
 				2CEA887A222A806900EE543C /* UIRefreshControl+AFNetworking.m in Sources */,
 				2CEA8816222A806900EE543C /* LGPhotoPickerBrowserPhotoScrollView.m in Sources */,
