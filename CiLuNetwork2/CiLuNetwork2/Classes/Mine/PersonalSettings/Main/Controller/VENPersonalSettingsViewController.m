@@ -35,14 +35,14 @@ static NSString *cellIdentifier = @"cellIdentifier";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return section == 1 ? 1 : 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     VENMineTableViewCellStyleOne *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    NSArray *titleArr = @[@[@"个人资料", @"修改密码"], @[@"加入优势", @"关于我们"], @[@"在线留言", @"清除缓存"]];
+    NSArray *titleArr = @[@[@"个人资料", @"修改密码"], @[@"关于我们"], @[@"在线留言", @"清除缓存"]];
     cell.leftLabel.text = titleArr[indexPath.section][indexPath.row];
     
     return cell;
@@ -59,19 +59,11 @@ static NSString *cellIdentifier = @"cellIdentifier";
         }
     } else if (indexPath.section == 1) {
         NSDictionary *metaData = [[NSUserDefaults standardUserDefaults] objectForKey:@"metaData"];
-        if (indexPath.row == 0) {
-            VENAboutUsViewController *vc = [[VENAboutUsViewController alloc] init];
-            vc.isPush = YES;
-            vc.navigationItem.title = @"加入优势";
-            vc.HTMLString = metaData[@"join_advantage"];
-            [self.navigationController pushViewController:vc animated:YES];
-        } else {
-            VENAboutUsViewController *vc = [[VENAboutUsViewController alloc] init];
-            vc.isPush = YES;
-            vc.navigationItem.title = @"关于我们";
-            vc.HTMLString = metaData[@"about_us"];
-            [self.navigationController pushViewController:vc animated:YES];
-        }
+        VENAboutUsViewController *vc = [[VENAboutUsViewController alloc] init];
+        vc.isPush = YES;
+        vc.navigationItem.title = @"关于我们";
+        vc.HTMLString = metaData[@"about_us"];
+        [self.navigationController pushViewController:vc animated:YES];
     } else {
         if (indexPath.row == 0) { // 在线留言
             VENOnlineMessageViewController *vc = [[VENOnlineMessageViewController alloc] init];
@@ -79,7 +71,7 @@ static NSString *cellIdentifier = @"cellIdentifier";
         } else { // 清除缓存
             
             [[VENMBProgressHUDManager sharedManager] addLoading];
-            [[VENMBProgressHUDManager sharedManager] showText:@"清除缓存中"];
+//            [[VENMBProgressHUDManager sharedManager] showText:@"清除缓存中"];
             
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [[VENMBProgressHUDManager sharedManager] removeLoading];
@@ -147,6 +139,9 @@ static NSString *cellIdentifier = @"cellIdentifier";
 //    [userDefaults removeObjectForKey:@"refresh_token"];
 
     self.block(@"loginoutSuccess");
+    
+    // 刷新 首页
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ResetHomePage" object:nil];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"Logout" object:nil];
     
     [self.tabBarController.tabBar.items[2] setBadgeValue:nil];

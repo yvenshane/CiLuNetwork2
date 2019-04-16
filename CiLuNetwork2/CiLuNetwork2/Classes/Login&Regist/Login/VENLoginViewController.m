@@ -77,6 +77,8 @@
     [[VENNetworkTool sharedManager] requestWithMethod:HTTPMethodPost path:@"auth/login" params:params showLoading:YES successBlock:^(id response) {
         
         if ([response[@"status"] integerValue] == 0) {
+            // 刷新 首页
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"ResetHomePage" object:nil];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshShoppingCart" object:nil];
             
             NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];

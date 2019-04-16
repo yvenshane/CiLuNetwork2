@@ -16,6 +16,28 @@
 		2C3233CB225CE80F0089B01A /* VENHomePageHorizontalCollectionViewCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3233C9225CE80F0089B01A /* VENHomePageHorizontalCollectionViewCell2.m */; };
 		2C3233CC225CE80F0089B01A /* VENHomePageHorizontalCollectionViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3233CA225CE80F0089B01A /* VENHomePageHorizontalCollectionViewCell2.xib */; };
 		2C82E20322511C0E0060CB54 /* VENSalesManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C82E20222511C0E0060CB54 /* VENSalesManagementViewController.m */; };
+		2C9363842265C78A00B9E219 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2C9363782265C78A00B9E219 /* AlipaySDK.bundle */; };
+		2C9363852265C78A00B9E219 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C9363792265C78A00B9E219 /* AlipaySDK.framework */; };
+		2C9363862265C78A00B9E219 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C93637E2265C78A00B9E219 /* libWeChatSDK.a */; };
+		2C9363872265C78A00B9E219 /* libPaymentControl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C9363832265C78A00B9E219 /* libPaymentControl.a */; };
+		2C93638A2265C93600B9E219 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C9363892265C93600B9E219 /* CoreMotion.framework */; };
+		2C93638C2265C93E00B9E219 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C93638B2265C93E00B9E219 /* CFNetwork.framework */; };
+		2C93638E2265C94800B9E219 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C93638D2265C94800B9E219 /* Foundation.framework */; };
+		2C9363902265C94F00B9E219 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C93638F2265C94F00B9E219 /* UIKit.framework */; };
+		2C9363922265C95800B9E219 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C9363912265C95800B9E219 /* CoreGraphics.framework */; };
+		2C9363942265C96100B9E219 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C9363932265C96100B9E219 /* CoreText.framework */; };
+		2C9363962265C96800B9E219 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C9363952265C96800B9E219 /* QuartzCore.framework */; };
+		2C9363982265C97100B9E219 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C9363972265C97100B9E219 /* CoreTelephony.framework */; };
+		2C93639A2265C97900B9E219 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C9363992265C97900B9E219 /* SystemConfiguration.framework */; };
+		2C93639C2265C98100B9E219 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C93639B2265C98100B9E219 /* libz.tbd */; };
+		2C93639E2265C99000B9E219 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C93639D2265C99000B9E219 /* libc++.tbd */; };
+		2C9363A02265C9CC00B9E219 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C93639F2265C9CC00B9E219 /* libsqlite3.0.tbd */; };
+		2CBC2599226329F700580F26 /* VENHomePageFoundationDonationListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC2598226329F700580F26 /* VENHomePageFoundationDonationListView.m */; };
+		2CBC259D22632E0A00580F26 /* VENHomePageFoundationDonationListViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC259B22632E0A00580F26 /* VENHomePageFoundationDonationListViewTableViewCell.m */; };
+		2CBC259E22632E0A00580F26 /* VENHomePageFoundationDonationListViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CBC259C22632E0A00580F26 /* VENHomePageFoundationDonationListViewTableViewCell.xib */; };
+		2CBC25A3226368B700580F26 /* VENHomePageFoundationHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC25A2226368B700580F26 /* VENHomePageFoundationHeaderView.m */; };
+		2CBC25A7226368FC00580F26 /* VENHomePageFoundationHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CBC25A6226368FC00580F26 /* VENHomePageFoundationHeaderView.xib */; };
+		2CBC25AC226377BD00580F26 /* VENHomePageFoundationMoreListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC25AB226377BD00580F26 /* VENHomePageFoundationMoreListViewController.m */; };
 		2CDE859A2230107F004A87FE /* VENCustomerManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE85992230107F004A87FE /* VENCustomerManagementViewController.m */; };
 		2CDE859F22301274004A87FE /* VENCustomerManagementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CDE859D22301274004A87FE /* VENCustomerManagementTableViewCell.m */; };
 		2CDE85A022301274004A87FE /* VENCustomerManagementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CDE859E22301274004A87FE /* VENCustomerManagementTableViewCell.xib */; };
@@ -307,6 +329,7 @@
 		2CEA8AA0222A859900EE543C /* VENMineTableViewCellStyleOne.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CEA8A15222A859800EE543C /* VENMineTableViewCellStyleOne.xib */; };
 		2CEA8AA1222A859900EE543C /* VENMineTableViewCellStyleOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEA8A17222A859800EE543C /* VENMineTableViewCellStyleOne.m */; };
 		2CEBB9A62254448E006DDED4 /* VENDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEBB9A52254448E006DDED4 /* VENDatePickerView.m */; };
+		2CFF362E225E3A5100DC1E2D /* VENHomePageFoundationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CFF362D225E3A5100DC1E2D /* VENHomePageFoundationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -325,6 +348,38 @@
 		2C3233CA225CE80F0089B01A /* VENHomePageHorizontalCollectionViewCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VENHomePageHorizontalCollectionViewCell2.xib; sourceTree = "<group>"; };
 		2C82E20122511C0E0060CB54 /* VENSalesManagementViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VENSalesManagementViewController.h; sourceTree = "<group>"; };
 		2C82E20222511C0E0060CB54 /* VENSalesManagementViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VENSalesManagementViewController.m; sourceTree = "<group>"; };
+		2C9363782265C78A00B9E219 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		2C9363792265C78A00B9E219 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		2C93637B2265C78A00B9E219 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		2C93637C2265C78A00B9E219 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		2C93637D2265C78A00B9E219 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
+		2C93637E2265C78A00B9E219 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		2C9363802265C78A00B9E219 /* UPPaymentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPPaymentControl.h; sourceTree = "<group>"; };
+		2C9363812265C78A00B9E219 /* UPAPayPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPAPayPlugin.h; sourceTree = "<group>"; };
+		2C9363822265C78A00B9E219 /* UPAPayPluginDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPAPayPluginDelegate.h; sourceTree = "<group>"; };
+		2C9363832265C78A00B9E219 /* libPaymentControl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPaymentControl.a; sourceTree = "<group>"; };
+		2C9363892265C93600B9E219 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		2C93638B2265C93E00B9E219 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		2C93638D2265C94800B9E219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2C93638F2265C94F00B9E219 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2C9363912265C95800B9E219 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2C9363932265C96100B9E219 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		2C9363952265C96800B9E219 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2C9363972265C97100B9E219 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		2C9363992265C97900B9E219 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		2C93639B2265C98100B9E219 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		2C93639D2265C99000B9E219 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		2C93639F2265C9CC00B9E219 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		2CBC2597226329F700580F26 /* VENHomePageFoundationDonationListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VENHomePageFoundationDonationListView.h; sourceTree = "<group>"; };
+		2CBC2598226329F700580F26 /* VENHomePageFoundationDonationListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VENHomePageFoundationDonationListView.m; sourceTree = "<group>"; };
+		2CBC259A22632E0A00580F26 /* VENHomePageFoundationDonationListViewTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VENHomePageFoundationDonationListViewTableViewCell.h; sourceTree = "<group>"; };
+		2CBC259B22632E0A00580F26 /* VENHomePageFoundationDonationListViewTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VENHomePageFoundationDonationListViewTableViewCell.m; sourceTree = "<group>"; };
+		2CBC259C22632E0A00580F26 /* VENHomePageFoundationDonationListViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VENHomePageFoundationDonationListViewTableViewCell.xib; sourceTree = "<group>"; };
+		2CBC25A1226368B700580F26 /* VENHomePageFoundationHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VENHomePageFoundationHeaderView.h; sourceTree = "<group>"; };
+		2CBC25A2226368B700580F26 /* VENHomePageFoundationHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VENHomePageFoundationHeaderView.m; sourceTree = "<group>"; };
+		2CBC25A6226368FC00580F26 /* VENHomePageFoundationHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VENHomePageFoundationHeaderView.xib; sourceTree = "<group>"; };
+		2CBC25AA226377BD00580F26 /* VENHomePageFoundationMoreListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VENHomePageFoundationMoreListViewController.h; sourceTree = "<group>"; };
+		2CBC25AB226377BD00580F26 /* VENHomePageFoundationMoreListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VENHomePageFoundationMoreListViewController.m; sourceTree = "<group>"; };
 		2CDE85982230107F004A87FE /* VENCustomerManagementViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VENCustomerManagementViewController.h; sourceTree = "<group>"; };
 		2CDE85992230107F004A87FE /* VENCustomerManagementViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VENCustomerManagementViewController.m; sourceTree = "<group>"; };
 		2CDE859C22301274004A87FE /* VENCustomerManagementTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VENCustomerManagementTableViewCell.h; sourceTree = "<group>"; };
@@ -884,6 +939,8 @@
 		2CEA8A18222A859800EE543C /* VENMineTableViewCellStyleThree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VENMineTableViewCellStyleThree.h; sourceTree = "<group>"; };
 		2CEBB9A42254448E006DDED4 /* VENDatePickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VENDatePickerView.h; sourceTree = "<group>"; };
 		2CEBB9A52254448E006DDED4 /* VENDatePickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VENDatePickerView.m; sourceTree = "<group>"; };
+		2CFF362C225E3A5100DC1E2D /* VENHomePageFoundationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VENHomePageFoundationViewController.h; sourceTree = "<group>"; };
+		2CFF362D225E3A5100DC1E2D /* VENHomePageFoundationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VENHomePageFoundationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -891,6 +948,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C9363A02265C9CC00B9E219 /* libsqlite3.0.tbd in Frameworks */,
+				2C93639E2265C99000B9E219 /* libc++.tbd in Frameworks */,
+				2C93639C2265C98100B9E219 /* libz.tbd in Frameworks */,
+				2C93639A2265C97900B9E219 /* SystemConfiguration.framework in Frameworks */,
+				2C9363982265C97100B9E219 /* CoreTelephony.framework in Frameworks */,
+				2C9363962265C96800B9E219 /* QuartzCore.framework in Frameworks */,
+				2C9363942265C96100B9E219 /* CoreText.framework in Frameworks */,
+				2C9363922265C95800B9E219 /* CoreGraphics.framework in Frameworks */,
+				2C9363902265C94F00B9E219 /* UIKit.framework in Frameworks */,
+				2C93638E2265C94800B9E219 /* Foundation.framework in Frameworks */,
+				2C93638C2265C93E00B9E219 /* CFNetwork.framework in Frameworks */,
+				2C93638A2265C93600B9E219 /* CoreMotion.framework in Frameworks */,
+				2C9363862265C78A00B9E219 /* libWeChatSDK.a in Frameworks */,
+				2C9363852265C78A00B9E219 /* AlipaySDK.framework in Frameworks */,
+				2C9363872265C78A00B9E219 /* libPaymentControl.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -930,6 +1002,106 @@
 				2C3233CA225CE80F0089B01A /* VENHomePageHorizontalCollectionViewCell2.xib */,
 			);
 			path = HorizontalCollectionView2;
+			sourceTree = "<group>";
+		};
+		2C9363762265C78A00B9E219 /* Pay */ = {
+			isa = PBXGroup;
+			children = (
+				2C9363772265C78A00B9E219 /* AliPay */,
+				2C93637A2265C78A00B9E219 /* WXPay */,
+				2C93637F2265C78A00B9E219 /* UnionPay */,
+			);
+			path = Pay;
+			sourceTree = "<group>";
+		};
+		2C9363772265C78A00B9E219 /* AliPay */ = {
+			isa = PBXGroup;
+			children = (
+				2C9363782265C78A00B9E219 /* AlipaySDK.bundle */,
+				2C9363792265C78A00B9E219 /* AlipaySDK.framework */,
+			);
+			path = AliPay;
+			sourceTree = "<group>";
+		};
+		2C93637A2265C78A00B9E219 /* WXPay */ = {
+			isa = PBXGroup;
+			children = (
+				2C93637B2265C78A00B9E219 /* WXApi.h */,
+				2C93637C2265C78A00B9E219 /* WXApiObject.h */,
+				2C93637D2265C78A00B9E219 /* WechatAuthSDK.h */,
+				2C93637E2265C78A00B9E219 /* libWeChatSDK.a */,
+			);
+			path = WXPay;
+			sourceTree = "<group>";
+		};
+		2C93637F2265C78A00B9E219 /* UnionPay */ = {
+			isa = PBXGroup;
+			children = (
+				2C9363802265C78A00B9E219 /* UPPaymentControl.h */,
+				2C9363812265C78A00B9E219 /* UPAPayPlugin.h */,
+				2C9363822265C78A00B9E219 /* UPAPayPluginDelegate.h */,
+				2C9363832265C78A00B9E219 /* libPaymentControl.a */,
+			);
+			path = UnionPay;
+			sourceTree = "<group>";
+		};
+		2C9363882265C93500B9E219 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C93639F2265C9CC00B9E219 /* libsqlite3.0.tbd */,
+				2C93639D2265C99000B9E219 /* libc++.tbd */,
+				2C93639B2265C98100B9E219 /* libz.tbd */,
+				2C9363992265C97900B9E219 /* SystemConfiguration.framework */,
+				2C9363972265C97100B9E219 /* CoreTelephony.framework */,
+				2C9363952265C96800B9E219 /* QuartzCore.framework */,
+				2C9363932265C96100B9E219 /* CoreText.framework */,
+				2C9363912265C95800B9E219 /* CoreGraphics.framework */,
+				2C93638F2265C94F00B9E219 /* UIKit.framework */,
+				2C93638D2265C94800B9E219 /* Foundation.framework */,
+				2C93638B2265C93E00B9E219 /* CFNetwork.framework */,
+				2C9363892265C93600B9E219 /* CoreMotion.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2CBC2596226329E300580F26 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2CBC259F2263688000580F26 /* DonationList */,
+				2CBC25A02263688A00580F26 /* HeaderView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2CBC259F2263688000580F26 /* DonationList */ = {
+			isa = PBXGroup;
+			children = (
+				2CBC2597226329F700580F26 /* VENHomePageFoundationDonationListView.h */,
+				2CBC2598226329F700580F26 /* VENHomePageFoundationDonationListView.m */,
+				2CBC259A22632E0A00580F26 /* VENHomePageFoundationDonationListViewTableViewCell.h */,
+				2CBC259B22632E0A00580F26 /* VENHomePageFoundationDonationListViewTableViewCell.m */,
+				2CBC259C22632E0A00580F26 /* VENHomePageFoundationDonationListViewTableViewCell.xib */,
+			);
+			path = DonationList;
+			sourceTree = "<group>";
+		};
+		2CBC25A02263688A00580F26 /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				2CBC25A1226368B700580F26 /* VENHomePageFoundationHeaderView.h */,
+				2CBC25A2226368B700580F26 /* VENHomePageFoundationHeaderView.m */,
+				2CBC25A6226368FC00580F26 /* VENHomePageFoundationHeaderView.xib */,
+			);
+			path = HeaderView;
+			sourceTree = "<group>";
+		};
+		2CBC25A92263779600580F26 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				2CBC25AA226377BD00580F26 /* VENHomePageFoundationMoreListViewController.h */,
+				2CBC25AB226377BD00580F26 /* VENHomePageFoundationMoreListViewController.m */,
+			);
+			path = More;
 			sourceTree = "<group>";
 		};
 		2CDE859422300FC4004A87FE /* CustomerManagement */ = {
@@ -996,6 +1168,7 @@
 			children = (
 				2CEA869F222A7BC300EE543C /* CiLuNetwork2 */,
 				2CEA869E222A7BC300EE543C /* Products */,
+				2C9363882265C93500B9E219 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1025,6 +1198,7 @@
 		2CEA86B7222A806800EE543C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2C9363762265C78A00B9E219 /* Pay */,
 				2CEA889E222A808A00EE543C /* SharedManager */,
 				2CEA86B8222A806800EE543C /* ThirdPartyFramework */,
 				2CEA88AE222A81E200EE543C /* Main */,
@@ -1939,9 +2113,8 @@
 		2CEA88EF222A859800EE543C /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
-				2CEA88F3222A859800EE543C /* Model */,
-				2CEA88F6222A859800EE543C /* View */,
-				2CEA88F0222A859800EE543C /* Controller */,
+				2CFF3629225E39B300DC1E2D /* Main */,
+				2CFF362A225E39C500DC1E2D /* Foundation */,
 			);
 			path = HomePage;
 			sourceTree = "<group>";
@@ -2113,8 +2286,8 @@
 		2CEA892E222A859800EE543C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2CEA892F222A859800EE543C /* VENClassifyDetailsViewController.m */,
 				2CEA8930222A859800EE543C /* VENClassifyDetailsViewController.h */,
+				2CEA892F222A859800EE543C /* VENClassifyDetailsViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2162,9 +2335,9 @@
 		2CEA893E222A859800EE543C /* HeaderView */ = {
 			isa = PBXGroup;
 			children = (
+				2CEA8941222A859800EE543C /* VENClassifyDetailsHeaderView.h */,
 				2CEA893F222A859800EE543C /* VENClassifyDetailsHeaderView.m */,
 				2CEA8940222A859800EE543C /* VENClassifyDetailsHeaderView.xib */,
-				2CEA8941222A859800EE543C /* VENClassifyDetailsHeaderView.h */,
 			);
 			path = HeaderView;
 			sourceTree = "<group>";
@@ -2781,8 +2954,8 @@
 		2CEA89EC222A859800EE543C /* PersonalData */ = {
 			isa = PBXGroup;
 			children = (
-				2CEA89ED222A859800EE543C /* Controller */,
 				2CEA89F9222A859800EE543C /* Model */,
+				2CEA89ED222A859800EE543C /* Controller */,
 			);
 			path = PersonalData;
 			sourceTree = "<group>";
@@ -2801,8 +2974,8 @@
 			isa = PBXGroup;
 			children = (
 				2CEA89EF222A859800EE543C /* VENPersonalDataNamePageViewController.h */,
-				2CEA89F0222A859800EE543C /* VENPersonalDataNamePageViewController.xib */,
 				2CEA89F1222A859800EE543C /* VENPersonalDataNamePageViewController.m */,
+				2CEA89F0222A859800EE543C /* VENPersonalDataNamePageViewController.xib */,
 			);
 			path = Name;
 			sourceTree = "<group>";
@@ -2810,9 +2983,9 @@
 		2CEA89F2222A859800EE543C /* InvitationCode */ = {
 			isa = PBXGroup;
 			children = (
-				2CEA89F3222A859800EE543C /* VENPersonalDataInvitationCodePageViewController.xib */,
 				2CEA89F4222A859800EE543C /* VENPersonalDataInvitationCodePageViewController.h */,
 				2CEA89F5222A859800EE543C /* VENPersonalDataInvitationCodePageViewController.m */,
+				2CEA89F3222A859800EE543C /* VENPersonalDataInvitationCodePageViewController.xib */,
 			);
 			path = InvitationCode;
 			sourceTree = "<group>";
@@ -2866,8 +3039,8 @@
 		2CEA8A05222A859800EE543C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2CEA8A06222A859800EE543C /* VENPersonalSettingsViewController.m */,
 				2CEA8A07222A859800EE543C /* VENPersonalSettingsViewController.h */,
+				2CEA8A06222A859800EE543C /* VENPersonalSettingsViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2923,6 +3096,35 @@
 				2CEBB9A52254448E006DDED4 /* VENDatePickerView.m */,
 			);
 			path = DatePicker;
+			sourceTree = "<group>";
+		};
+		2CFF3629225E39B300DC1E2D /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				2CEA88F3222A859800EE543C /* Model */,
+				2CEA88F6222A859800EE543C /* View */,
+				2CEA88F0222A859800EE543C /* Controller */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		2CFF362A225E39C500DC1E2D /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				2CBC2596226329E300580F26 /* View */,
+				2CFF362B225E3A1100DC1E2D /* Controller */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		2CFF362B225E3A1100DC1E2D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2CBC25A92263779600580F26 /* More */,
+				2CFF362C225E3A5100DC1E2D /* VENHomePageFoundationViewController.h */,
+				2CFF362D225E3A5100DC1E2D /* VENHomePageFoundationViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -3005,6 +3207,7 @@
 				2CEA8A78222A859900EE543C /* VENMyOrderTableViewCell.xib in Resources */,
 				2CEA8A2C222A859900EE543C /* VENShoppingCartPlacingOrderHeaderView.xib in Resources */,
 				2CEA8A97222A859900EE543C /* VENOnlineMessageViewController.xib in Resources */,
+				2C9363842265C78A00B9E219 /* AlipaySDK.bundle in Resources */,
 				2CEA8A8C222A859900EE543C /* VENMyBalanceTableViewCell.xib in Resources */,
 				2CEA8A8F222A859900EE543C /* VENPersonalDataNamePageViewController.xib in Resources */,
 				2CEA8A49222A859900EE543C /* VENClassifyDetailsUserEvaluateTableViewCell.xib in Resources */,
@@ -3012,9 +3215,11 @@
 				2CEA8A4E222A859900EE543C /* VENClassifyDetailsPopupViewTableViewCell.xib in Resources */,
 				2CEA8A70222A859900EE543C /* VENMyOrderOrderDetailsFooterView.xib in Resources */,
 				2CEA8A42222A859900EE543C /* VENRegistSetPasswordViewController.xib in Resources */,
+				2CBC25A7226368FC00580F26 /* VENHomePageFoundationHeaderView.xib in Resources */,
 				2CEA8A51222A859900EE543C /* VENClassifyDetailsHeaderView.xib in Resources */,
 				2CEA8A9E222A859900EE543C /* VENMineTableViewCellStyleTwo.xib in Resources */,
 				2CEA8A8D222A859900EE543C /* VENMyBalanceHeaderViewTableViewCell.xib in Resources */,
+				2CBC259E22632E0A00580F26 /* VENHomePageFoundationDonationListViewTableViewCell.xib in Resources */,
 				2CEA8A68222A859900EE543C /* VENMyPointsHeaderViewTableViewCell.xib in Resources */,
 				2CEA8A91222A859900EE543C /* VENPersonalDataInvitationCodePageViewController.xib in Resources */,
 				2CEA8871222A806900EE543C /* IQKeyboardManager.bundle in Resources */,
@@ -3050,6 +3255,7 @@
 				2CEA8A67222A859900EE543C /* VENMyPointsHeaderViewTableViewCell.m in Sources */,
 				2CEA887C222A806900EE543C /* UIImageView+AFNetworking.m in Sources */,
 				2CEA8891222A806900EE543C /* SDWebImageDecoder.m in Sources */,
+				2CBC25AC226377BD00580F26 /* VENHomePageFoundationMoreListViewController.m in Sources */,
 				2CEA8838222A806900EE543C /* MJRefreshNormalHeader.m in Sources */,
 				2CEA8826222A806900EE543C /* LGPhotoPickerFooterCollectionReusableView.m in Sources */,
 				2CEA8A56222A859900EE543C /* VENFilterView.m in Sources */,
@@ -3098,6 +3304,7 @@
 				2CEA8A57222A859900EE543C /* VENMyTeamSubviewsController.m in Sources */,
 				2CEA8862222A806900EE543C /* MASConstraintMaker.m in Sources */,
 				2CEA8857222A806900EE543C /* JXCategoryNumberCellModel.m in Sources */,
+				2CBC25A3226368B700580F26 /* VENHomePageFoundationHeaderView.m in Sources */,
 				2CEA8870222A806900EE543C /* IQPreviousNextView.m in Sources */,
 				2CEA8A94222A859900EE543C /* VENPersonalDataModel.m in Sources */,
 				2CEA8836222A806900EE543C /* MJRefreshAutoGifFooter.m in Sources */,
@@ -3167,6 +3374,7 @@
 				2CEA8864222A806900EE543C /* NSArray+MASAdditions.m in Sources */,
 				2CEA8A80222A859900EE543C /* VENMyBalanceAddAccountTableViewCell.m in Sources */,
 				2CEA883E222A806900EE543C /* MJRefreshAutoFooter.m in Sources */,
+				2CBC259D22632E0A00580F26 /* VENHomePageFoundationDonationListViewTableViewCell.m in Sources */,
 				2CEA8A4F222A859900EE543C /* VENClassifyDetailsPopupViewTableViewCell.m in Sources */,
 				2CEA883A222A806900EE543C /* MJRefreshGifHeader.m in Sources */,
 				2CEA8A4B222A859900EE543C /* VENClassifyDetailsModel.m in Sources */,
@@ -3185,6 +3393,7 @@
 				2CEA886F222A806900EE543C /* IQUIView+IQKeyboardToolbar.m in Sources */,
 				2CDE85A422301451004A87FE /* VENCustomerManagementModel.m in Sources */,
 				2CEA88AA222A808B00EE543C /* VENClassEmptyManager.m in Sources */,
+				2CFF362E225E3A5100DC1E2D /* VENHomePageFoundationViewController.m in Sources */,
 				2CEA8A5E222A859900EE543C /* VENMyCommissionModel.m in Sources */,
 				2CEA8894222A806900EE543C /* UIImage+GIF.m in Sources */,
 				2CEA8880222A806900EE543C /* AFAutoPurgingImageCache.m in Sources */,
@@ -3224,6 +3433,7 @@
 				2CEA8850222A806900EE543C /* JXCategoryTitleCell.m in Sources */,
 				2CEA8A27222A859900EE543C /* VENShoppingCartPlacingOrderFooterView.m in Sources */,
 				2CEA8899222A806900EE543C /* SDWebImageDownloaderOperation.m in Sources */,
+				2CBC2599226329F700580F26 /* VENHomePageFoundationDonationListView.m in Sources */,
 				2CEA887E222A806900EE543C /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				2CEA8A74222A859900EE543C /* VENMyOrderAllOrdersViewController.m in Sources */,
 				2CEA88A9222A808B00EE543C /* VENBadgeValueManager.m in Sources */,
@@ -3426,13 +3636,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YZ49LT3V26;
+				DEVELOPMENT_TEAM = Y99CH2YM5T;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CiLuNetwork2/Classes/Pay/AliPay",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/CiLuNetwork2/VENPrefixHeader.pch";
 				INFOPLIST_FILE = CiLuNetwork2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CiLuNetwork2/Classes/Pay/WXPay",
+					"$(PROJECT_DIR)/CiLuNetwork2/Classes/Pay/UnionPay",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ahaiba.CiLuNetwork2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3445,13 +3664,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YZ49LT3V26;
+				DEVELOPMENT_TEAM = Y99CH2YM5T;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CiLuNetwork2/Classes/Pay/AliPay",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/CiLuNetwork2/VENPrefixHeader.pch";
 				INFOPLIST_FILE = CiLuNetwork2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CiLuNetwork2/Classes/Pay/WXPay",
+					"$(PROJECT_DIR)/CiLuNetwork2/Classes/Pay/UnionPay",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ahaiba.CiLuNetwork2;
 				PRODUCT_NAME = "$(TARGET_NAME)";

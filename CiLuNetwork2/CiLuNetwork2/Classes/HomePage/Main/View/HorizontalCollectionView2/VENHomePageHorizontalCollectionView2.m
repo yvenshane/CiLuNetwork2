@@ -72,12 +72,19 @@
     [cell.iconImageView sd_setImageWithURL:[NSURL URLWithString:self.foundationList[indexPath.row][@"logo"]] placeholderImage:[UIImage imageNamed:@"1"]];
     cell.titleLabel.text = self.foundationList[indexPath.row][@"name"];
     
+    if ([[NSString stringWithFormat:@"%@", self.foundationList[indexPath.row][@"id"]] isEqualToString:self.current_foundation_id]) {
+        cell.titleLabel.textColor = UIColorFromRGB(0x1A1A1A);
+    } else {
+        cell.titleLabel.textColor = UIColorFromRGB(0xCCCCCC);
+    }
+    
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    self.pushToFoundationPageBlock([NSString stringWithFormat:@"%@", self.foundationList[indexPath.row][@"id"]]);
-    
+    if ([[NSString stringWithFormat:@"%@", self.foundationList[indexPath.row][@"id"]] isEqualToString:self.current_foundation_id]) {
+        self.pushToFoundationPageBlock([NSString stringWithFormat:@"%@", self.foundationList[indexPath.row][@"id"]], self.foundationList[indexPath.row][@"name"]);
+    }
     NSLog(@"indexPath - %ld, id - %@", (long)indexPath.row, self.foundationList[indexPath.row][@"id"]);
 }
 

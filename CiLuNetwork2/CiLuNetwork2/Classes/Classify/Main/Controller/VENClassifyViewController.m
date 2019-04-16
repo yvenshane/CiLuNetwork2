@@ -39,19 +39,8 @@
 
     self.view.backgroundColor = [UIColor whiteColor];
     self.edgesForExtendedLayout = UIRectEdgeNone;
-    
-    NSString *tag = [[[NSUserDefaults standardUserDefaults] objectForKey:@"tag"] stringValue];
-    if ([[VENClassEmptyManager sharedManager] isEmptyString:tag]) {
-        NSDictionary *metaData = [[NSUserDefaults standardUserDefaults] objectForKey:@"metaData"];
-        tag = [metaData[@"foundationList"][0][@"id"] stringValue];
-        if ([[VENClassEmptyManager sharedManager] isEmptyString:tag]) {
-            tag = @"1";
-        }
-    }
-    
-    NSDictionary *params = @{@"tag" : tag};
-    
-    [[VENNetworkTool sharedManager] requestWithMethod:HTTPMethodPost path:@"goods/lists" params:params showLoading:YES successBlock:^(id response) {
+
+    [[VENNetworkTool sharedManager] requestWithMethod:HTTPMethodPost path:@"goods/lists" params:nil showLoading:YES successBlock:^(id response) {
         
         if ([response[@"status"] integerValue] == 0) {
             

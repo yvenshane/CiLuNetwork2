@@ -113,50 +113,50 @@ static NSString *cellIdentifier2 = @"cellIdentifier2";
 }
 
 - (void)confirmButtonClick {
-//    NSLog(@"确定充值");
-//    
-//    VENMyBalanceRechargeTableViewCell *cell = (VENMyBalanceRechargeTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-//    
-//    if ([[VENClassEmptyManager sharedManager] isEmptyString:cell.priceTextField.text]) {
-//        [[VENMBProgressHUDManager sharedManager] showText:@"请输入充值金额"];
-//        return;
-//    }
-//    
-//    NSString *type = self.rechargeStyle == VENMyBalanceRechargeStyleWXPay ? @"3" : @"2";
-//    
-//    NSDictionary *params = @{@"amount" : cell.priceTextField.text,
-//                             @"type" : type};
-//
-//    [[VENNetworkTool sharedManager] requestWithMethod:HTTPMethodPost path:@"balance/recharge" params:params showLoading:YES successBlock:^(id response) {
-//        
-//        if ([response[@"status"] integerValue] == 0) {
-//            
-//            if ([type isEqualToString:@"2"]) { // 支付宝
-//                //应用注册scheme,在AliSDKDemo-Info.plist定义URL types
-//                NSString *appScheme = @"CiluNetworkAlipay";
-//                
-//                // NOTE: 将签名成功字符串格式化为订单字符串,请严格按照该格式
-//                NSString *orderString = response[@"data"][@"sign_data"][@"sign"];
-//                
-//                // NOTE: 调用支付结果开始支付
-//                [[AlipaySDK defaultService] payOrder:orderString fromScheme:appScheme callback:^(NSDictionary *resultDic) {
-//                    NSLog(@"reslut = %@",resultDic);
-//                }];
-//            } else if ([type isEqualToString:@"3"]) { // 微信支付
-//                PayReq *request = [[PayReq alloc] init];
-//                request.partnerId = response[@"data"][@"sign_data"][@"partnerid"];
-//                request.prepayId = response[@"data"][@"sign_data"][@"prepayid"];
-//                request.package = response[@"data"][@"sign_data"][@"package"];
-//                request.nonceStr = response[@"data"][@"sign_data"][@"noncestr"];
-//                request.timeStamp = [response[@"data"][@"sign_data"][@"timestamp"] intValue];
-//                request.sign= response[@"data"][@"sign_data"][@"sign"];
-//                [WXApi sendReq:request];
-//            }
-//        }
-//
-//    } failureBlock:^(NSError *error) {
-//
-//    }];
+    NSLog(@"确定充值");
+    
+    VENMyBalanceRechargeTableViewCell *cell = (VENMyBalanceRechargeTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    
+    if ([[VENClassEmptyManager sharedManager] isEmptyString:cell.priceTextField.text]) {
+        [[VENMBProgressHUDManager sharedManager] showText:@"请输入充值金额"];
+        return;
+    }
+    
+    NSString *type = self.rechargeStyle == VENMyBalanceRechargeStyleWXPay ? @"3" : @"2";
+    
+    NSDictionary *params = @{@"amount" : cell.priceTextField.text,
+                             @"type" : type};
+
+    [[VENNetworkTool sharedManager] requestWithMethod:HTTPMethodPost path:@"balance/recharge" params:params showLoading:YES successBlock:^(id response) {
+        
+        if ([response[@"status"] integerValue] == 0) {
+            
+            if ([type isEqualToString:@"2"]) { // 支付宝
+                //应用注册scheme,在AliSDKDemo-Info.plist定义URL types
+                NSString *appScheme = @"CiluNetwork2Alipay";
+                
+                // NOTE: 将签名成功字符串格式化为订单字符串,请严格按照该格式
+                NSString *orderString = response[@"data"][@"sign_data"][@"sign"];
+                
+                // NOTE: 调用支付结果开始支付
+                [[AlipaySDK defaultService] payOrder:orderString fromScheme:appScheme callback:^(NSDictionary *resultDic) {
+                    NSLog(@"reslut = %@",resultDic);
+                }];
+            } else if ([type isEqualToString:@"3"]) { // 微信支付
+                PayReq *request = [[PayReq alloc] init];
+                request.partnerId = response[@"data"][@"sign_data"][@"partnerid"];
+                request.prepayId = response[@"data"][@"sign_data"][@"prepayid"];
+                request.package = response[@"data"][@"sign_data"][@"package"];
+                request.nonceStr = response[@"data"][@"sign_data"][@"noncestr"];
+                request.timeStamp = [response[@"data"][@"sign_data"][@"timestamp"] intValue];
+                request.sign= response[@"data"][@"sign_data"][@"sign"];
+                [WXApi sendReq:request];
+            }
+        }
+
+    } failureBlock:^(NSError *error) {
+
+    }];
 }
 
 - (void)dealloc {

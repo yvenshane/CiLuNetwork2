@@ -76,8 +76,6 @@
     [[VENNetworkTool sharedManager] requestWithMethod:HTTPMethodPost path:@"auth/register" params:params showLoading:YES successBlock:^(id response) {
         
         if ([response[@"status"] integerValue] == 0) {
-//            // 刷新 首页
-//            [[NSNotificationCenter defaultCenter] postNotificationName:@"ResetHomePage" object:nil];
 //            // 刷新 分类页面
 //            [[NSNotificationCenter defaultCenter] postNotificationName:@"Reset" object:nil];
 

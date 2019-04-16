@@ -14,6 +14,7 @@
 #import "VENClassifyDetailsViewController.h"
 #import "VENClassifySearchViewController.h"
 #import "VENHomePageHorizontalCollectionView2.h"
+#import "VENHomePageFoundationViewController.h"
 
 @interface VENHomePageViewController () <SDCycleScrollViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITextFieldDelegate>
 @property (nonatomic, strong) UICollectionView *collectionView;
@@ -22,6 +23,7 @@
 @property (nonatomic, copy) NSArray *categories;
 @property (nonatomic, copy) NSArray *hotGoods;
 @property (nonatomic, copy) NSArray *newsGoods;
+@property (nonatomic, copy) NSString *current_foundation_id;
 
 @property (nonatomic, strong) SDCycleScrollView *cycleScrollView;
 @property (nonatomic, strong) VENHomePageHorizontalCollectionView *horizontalCollectionView;
@@ -56,17 +58,7 @@
 }
 
 - (void)loadData {
-    
-    NSString *tag = [[[NSUserDefaults standardUserDefaults] objectForKey:@"tag"] stringValue];
-    if ([[VENClassEmptyManager sharedManager] isEmptyString:tag]) {
-        NSDictionary *metaData = [[NSUserDefaults standardUserDefaults] objectForKey:@"metaData"];
-        tag = [metaData[@"foundationList"][0][@"id"] stringValue];
-        if ([[VENClassEmptyManager sharedManager] isEmptyString:tag]) {
-            tag = @"1";
-        }
-    }
-    
-    [[VENNetworkTool sharedManager] requestWithMethod:HTTPMethodPost path:@"goods/index" params:@{@"tag" : tag} showLoading:YES successBlock:^(id response) {
+    [[VENNetworkTool sharedManager] requestWithMethod:HTTPMethodPost path:@"goods/index" params:nil showLoading:YES successBlock:^(id response) {
         
         [self.collectionView.mj_header endRefreshing];
         
@@ -77,10 +69,13 @@
             NSArray *hotGoods = [NSArray yy_modelArrayWithClass:[VENHomePageModel class] json:response[@"data"][@"hot_goods"]];
             NSArray *newsGoods = [NSArray yy_modelArrayWithClass:[VENHomePageModel class] json:response[@"data"][@"new_goods"]];
             
+            NSString *current_foundation_id = [NSString stringWithFormat:@"%@", response[@"data"][@"current_foundation_id"]];
+            
             self.banners = banners;
             self.categories = categories;
             self.hotGoods = hotGoods;
             self.newsGoods = newsGoods;
+            self.current_foundation_id = current_foundation_id;
             
             [self setupCycleScrollView];
             [self setupHorizontalCollectionView];
@@ -214,8 +209,12 @@
     if (self.horizontalCollectionView2 == nil) {
         // 分类图标
         VENHomePageHorizontalCollectionView2 *horizontalCollectionView2 = [[VENHomePageHorizontalCollectionView2 alloc] initWithFrame:CGRectMake(0, 160, kMainScreenWidth, 137)];
-        horizontalCollectionView2.pushToFoundationPageBlock = ^(NSString *str) {
-            
+        horizontalCollectionView2.current_foundation_id = self.current_foundation_id;
+        horizontalCollectionView2.pushToFoundationPageBlock = ^(NSString *i_d, NSString *title) {
+            VENHomePageFoundationViewController *vc = [[VENHomePageFoundationViewController alloc] init];
+            vc.hidesBottomBarWhenPushed = YES;
+            vc.navigationItem.title = title;
+            [self.navigationController pushViewController:vc animated:YES];
         };
         [self.collectionView addSubview:horizontalCollectionView2];
         

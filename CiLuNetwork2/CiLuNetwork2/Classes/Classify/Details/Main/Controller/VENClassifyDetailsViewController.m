@@ -23,6 +23,7 @@
 @property (nonatomic, strong) VENClassifyDetailsModel *model;
 @property (nonatomic, copy) NSArray *albumsArr;
 @property (nonatomic, copy) NSDictionary *commentsDict;
+@property (nonatomic, copy) NSDictionary *special_goodsDict;
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UIView *headerView;
@@ -68,6 +69,7 @@
             self.model = [VENClassifyDetailsModel yy_modelWithJSON:response[@"data"]];
             self.albumsArr = response[@"data"][@"album"][@"albums"];
             self.commentsDict = response[@"data"][@"comments"];
+            self.special_goodsDict = response[@"data"][@"special_goods"];
             
             [self setupTableView];
             [self setupBottomToolBar];
@@ -93,14 +95,31 @@
     tableView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:tableView];
     
+    // 商品名 用户评论 两行
     if ([self labelHeightWith:self.model.name and:16.0f] > 20 && [self labelHeightWith:self.commentsDict[@"comment"][@"content"] and:14.0f] > 17) {
         self.headerViewHeight = 363;
+        
+    // 商品名 一行 用户评论 两行
     } else if ([self labelHeightWith:self.model.name and:16.0f] <= 20 && [self labelHeightWith:self.commentsDict[@"comment"][@"content"] and:14.0f] > 17) {
-        self.headerViewHeight = 343;
+        self.headerViewHeight = 344;
+        
+    // 商品名 两行 用户评论 一行
     } else if ([self labelHeightWith:self.model.name and:16.0f] > 20 && [self labelHeightWith:self.commentsDict[@"comment"][@"content"] and:14.0f] <= 17) {
-        self.headerViewHeight = 346;
+        self.headerViewHeight = 347;
+        
+    // 商品名 用户评论 一行
     } else {
-        self.headerViewHeight = 327;
+        self.headerViewHeight = 328;
+    }
+    
+    // 特质商品
+    if ([self.special_goodsDict[@"is_show"] integerValue] == 1) {
+        self.headerViewHeight += 44;
+    }
+    
+    // 评论为空
+    if ([[VENClassEmptyManager sharedManager] isEmptyString:self.commentsDict[@"comment"][@"content"]]) {
+        self.headerViewHeight -= 140;
     }
     
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kMainScreenWidth, self.headerViewHeight + 375)];
@@ -132,20 +151,75 @@
     VENClassifyDetailsHeaderView *detailsHeaderView = [[[NSBundle mainBundle] loadNibNamed:@"VENClassifyDetailsHeaderView" owner:nil options:nil] lastObject];
     detailsHeaderView.frame = CGRectMake(0, 375, kMainScreenWidth, self.headerViewHeight);
     [detailsHeaderView.choiceButton addTarget:self action:@selector(choiceButtonClick) forControlEvents:UIControlEventTouchUpInside];
-    [detailsHeaderView.evaluateButton addTarget:self action:@selector(evaluateButtonClick) forControlEvents:UIControlEventTouchUpInside];
     [headerView addSubview:detailsHeaderView];
     
     detailsHeaderView.titleLabel.text = self.model.name;
     detailsHeaderView.priceLabel.text = self.model.price;
-    detailsHeaderView.tokenLabel.hidden = [self.model.is_new integerValue] == 0 ? YES : NO;
+
+    if ([self.special_goodsDict[@"is_show"] integerValue] == 1 && [self.model.is_new integerValue] == 1) {
+        detailsHeaderView.tokenLabel.hidden = NO;
+        detailsHeaderView.tokenLabel2.hidden = NO;
+        
+        detailsHeaderView.tokenLabelLeftLayoutConstraint.constant = 7;
+        detailsHeaderView.tokenLabel2LeftLayoutConstraint.constant = 7 + 48 + 7;
+        
+        detailsHeaderView.tezhiView.hidden = NO;
+        detailsHeaderView.tezhiLabel.text = [NSString stringWithFormat:@"购买此特制产品将捐赠付款总金额的%@%给基金会", self.special_goodsDict[@"rate"]];
+        detailsHeaderView.tezhiViewHeightLayoutConstraint.constant = 44.0f;
+        
+    } else if ([self.special_goodsDict[@"is_show"] integerValue] == 0 && [self.model.is_new integerValue] == 1) {
+        detailsHeaderView.tokenLabel.hidden = NO;
+        detailsHeaderView.tokenLabel2.hidden = YES;
+        
+        detailsHeaderView.tokenLabelLeftLayoutConstraint.constant = 7;
+//        detailsHeaderView.tokenLabel2LeftLayoutConstraint.constant = 7 + 48 + 7;
+        
+        detailsHeaderView.tezhiView.hidden = YES;
+        detailsHeaderView.tezhiViewHeightLayoutConstraint.constant = 0.0f;
+        
+    } else if ([self.special_goodsDict[@"is_show"] integerValue] == 1 && [self.model.is_new integerValue] == 0) {
+        detailsHeaderView.tokenLabel.hidden = YES;
+        detailsHeaderView.tokenLabel2.hidden = NO;
+        
+//        detailsHeaderView.tokenLabelLeftLayoutConstraint.constant = 7;
+        detailsHeaderView.tokenLabel2LeftLayoutConstraint.constant = 7;
+        
+        detailsHeaderView.tezhiView.hidden = NO;
+        detailsHeaderView.tezhiLabel.text = [NSString stringWithFormat:@"购买此特制产品将捐赠付款总金额的%@%给基金会", self.special_goodsDict[@"rate"]];
+        detailsHeaderView.tezhiViewHeightLayoutConstraint.constant = 44.0f;
+        
+    } else {
+        detailsHeaderView.tokenLabel.hidden = YES;
+        detailsHeaderView.tokenLabel2.hidden = YES;
+        
+        detailsHeaderView.tezhiView.hidden = YES;
+        detailsHeaderView.tezhiViewHeightLayoutConstraint.constant = 0.0f;
+    }
+    
     detailsHeaderView.numberLabel.text = self.model.sales_volume;
     detailsHeaderView.choiceLabel.text = self.model.spec;
     
-    detailsHeaderView.evaluateNumberLabel.text = [NSString stringWithFormat:@"用户评价（%@）", self.commentsDict[@"count"]];
-    [detailsHeaderView.evaluateUserIconImageView sd_setImageWithURL:self.commentsDict[@"comment"][@"avatar"]];
-    detailsHeaderView.evaluateUserPhonenumberLabel.text = self.commentsDict[@"comment"][@"name"];
-    detailsHeaderView.evaluateDateLabel.text = self.commentsDict[@"comment"][@"commented_at"];
-    detailsHeaderView.evaluateContentLabel.text = self.commentsDict[@"comment"][@"content"];
+    
+    if ([[VENClassEmptyManager sharedManager] isEmptyString:self.commentsDict[@"comment"][@"content"]]) {
+        detailsHeaderView.evaluateRightImageView.hidden = YES;
+        detailsHeaderView.evaluateLineView.hidden = YES;
+        detailsHeaderView.evaluateLineView2.hidden = YES;
+        
+        detailsHeaderView.evaluateNumberLabel.hidden = YES;
+        detailsHeaderView.evaluateUserIconImageView.hidden = YES;
+        detailsHeaderView.evaluateUserPhonenumberLabel.hidden = YES;
+        detailsHeaderView.evaluateDateLabel.hidden = YES;
+        detailsHeaderView.evaluateContentLabel.hidden = YES;
+        detailsHeaderView.evaluateButton.hidden = YES;
+        
+    } else {
+        detailsHeaderView.evaluateNumberLabel.text = [NSString stringWithFormat:@"用户评价（%@）", self.commentsDict[@"count"]];
+        [detailsHeaderView.evaluateUserIconImageView sd_setImageWithURL:self.commentsDict[@"comment"][@"avatar"]];
+        detailsHeaderView.evaluateUserPhonenumberLabel.text = self.commentsDict[@"comment"][@"name"];
+        detailsHeaderView.evaluateDateLabel.text = self.commentsDict[@"comment"][@"commented_at"];
+        detailsHeaderView.evaluateContentLabel.text = self.commentsDict[@"comment"][@"content"];
+        [detailsHeaderView.evaluateButton addTarget:self action:@selector(evaluateButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    }
     
     // 商品详情
     UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, self.headerViewHeight + 375, kMainScreenWidth, 1)];
@@ -170,7 +244,7 @@
     newFrame.size.height = webViewHeight;
     webView.frame = newFrame;
     
-    self.tableView.tableHeaderView.frame = CGRectMake(0, 0, kMainScreenWidth, 375 + 360 +webViewHeight);
+    self.tableView.tableHeaderView.frame = CGRectMake(0, 0, kMainScreenWidth, 375 + self.headerViewHeight + webViewHeight);
     self.tableView.tableHeaderView = self.headerView;
 }
 
@@ -376,6 +450,7 @@
     UILabel *label = [[UILabel alloc] init];
     label.text = text;
     label.font = [UIFont systemFontOfSize:fontSize];
+    label.numberOfLines = 2;
     
     CGSize size = [label sizeThatFits:CGSizeMake(kMainScreenWidth - 30, CGFLOAT_MAX)];
     

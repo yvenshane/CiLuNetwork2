@@ -90,7 +90,7 @@ static NSString *cellIdentifier = @"cellIdentifier";
 }
 
 - (void)setupBottomToolBar {
-    UIView *bottomToolBar = [[UIView alloc] initWithFrame:CGRectMake(0, kMainScreenHeight - 48 - statusNavHeight, kMainScreenHeight, 48)];
+    UIView *bottomToolBar = [[UIView alloc] initWithFrame:CGRectMake(0, kMainScreenHeight - 48 - statusNavHeight - (tabBarHeight - 49), kMainScreenHeight, 48)];
     bottomToolBar.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:bottomToolBar];
     

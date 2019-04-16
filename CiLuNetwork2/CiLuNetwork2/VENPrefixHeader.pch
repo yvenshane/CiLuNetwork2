@@ -22,8 +22,8 @@
 #import "MJRefresh.h"
 #import "JXCategoryView.h"
 
-//#import "AlipaySDK/AlipaySDK.h"
-//#import "WXApi.h"
+#import "AlipaySDK/AlipaySDK.h"
+#import "WXApi.h"
 
 #import "VENNetworkTool.h"
 #import "VENMBProgressHUDManager.h"
@@ -31,8 +31,8 @@
 #import "VENUserStatusManager.h"
 #import "VENBadgeValueManager.h"
 
-#define WeChat_AppID @"wx6132aa5b6edb38e6"
-#define WeChat_AppSecret @"954fd6d78405c670978c93879db65584"
+#define WeChat_AppID @"wxbde87178cdb44b59"
+#define WeChat_AppSecret @"mhde5t4r49y5a6wo458q9653wet12535"
 #define WeChat_Url @"https://api.weixin.qq.com/sns"
 
 #define kMainScreenFrameRect [UIScreen mainScreen].bounds

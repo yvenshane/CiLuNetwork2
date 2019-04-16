@@ -67,32 +67,19 @@
 }
 
 - (void)loadDataWithPage:(NSString *)page {
-    
-    NSString *tag = [[[NSUserDefaults standardUserDefaults] objectForKey:@"tag"] stringValue];
-    if ([[VENClassEmptyManager sharedManager] isEmptyString:tag]) {
-        NSDictionary *metaData = [[NSUserDefaults standardUserDefaults] objectForKey:@"metaData"];
-        tag = [metaData[@"foundationList"][0][@"id"] stringValue];
-        if ([[VENClassEmptyManager sharedManager] isEmptyString:tag]) {
-            tag = @"1";
-        }
-    }
-    
     NSDictionary *params = @{};
 
     if (![[VENClassEmptyManager sharedManager] isEmptyString:self.price_sort]) {
         params = @{@"cate_id" : self.model.cate_id,
                    @"price_sort" : self.price_sort,
-                   @"page" : page,
-                   @"tag" : tag};
+                   @"page" : page};
     } else if (![[VENClassEmptyManager sharedManager] isEmptyString:self.sales_volume_sort]) {
         params = @{@"cate_id" : self.model.cate_id,
                    @"sales_volume_sort" : self.sales_volume_sort,
-                   @"page" : page,
-                   @"tag" : tag};
+                   @"page" : page};
     } else {
         params = @{@"cate_id" : self.model.cate_id,
-                   @"page" : page,
-                   @"tag" : tag};
+                   @"page" : page};
     }
     
     [[VENNetworkTool sharedManager] requestWithMethod:HTTPMethodPost path:@"goods/lists" params:params showLoading:YES successBlock:^(id response) {

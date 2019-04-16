@@ -25,6 +25,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *goods_thumb;
 @property (nonatomic, copy) NSString *sale_status;
 
+@property (nonatomic, copy) NSString *amount;
+@property (nonatomic, copy) NSString *date_time;
+@property (nonatomic, copy) NSString *name;
+
 @end
 
 NS_ASSUME_NONNULL_END

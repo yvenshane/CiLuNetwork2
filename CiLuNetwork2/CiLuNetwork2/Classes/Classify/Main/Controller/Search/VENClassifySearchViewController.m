@@ -59,19 +59,8 @@
 }
 
 - (void)loadDataWithPage:(NSString *)page {
-    
-    NSString *tag = [[[NSUserDefaults standardUserDefaults] objectForKey:@"tag"] stringValue];
-    if ([[VENClassEmptyManager sharedManager] isEmptyString:tag]) {
-        NSDictionary *metaData = [[NSUserDefaults standardUserDefaults] objectForKey:@"metaData"];
-        tag = [metaData[@"foundationList"][0][@"id"] stringValue];
-        if ([[VENClassEmptyManager sharedManager] isEmptyString:tag]) {
-            tag = @"1";
-        }
-    }
-    
     NSDictionary *params = @{@"cate_id" : @"0",
                              @"page" : page,
-                             @"tag" : tag,
                              @"keyword" : self.keyword};
     
     [[VENNetworkTool sharedManager] requestWithMethod:HTTPMethodPost path:@"goods/lists" params:params showLoading:NO successBlock:^(id response) {

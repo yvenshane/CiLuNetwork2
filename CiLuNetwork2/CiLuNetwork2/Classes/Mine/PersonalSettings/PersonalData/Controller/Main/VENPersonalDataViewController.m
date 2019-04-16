@@ -47,18 +47,18 @@ static NSString *cellIdentifier = @"cellIdentifier";
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return section == 0 ? 3 : 2;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     VENMineTableViewCellStyleOne *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    NSArray *titleArr = @[@[@"头像", @"姓名", @"手机号码"], @[@"邀请码", @"我的邀请码"]];
+    NSArray *titleArr = @[@[@"头像", @"姓名", @"手机号码", @"基金会"]];
     cell.leftLabel.text = titleArr[indexPath.section][indexPath.row];
     
     cell.iconImageView.hidden = YES;
@@ -66,76 +66,57 @@ static NSString *cellIdentifier = @"cellIdentifier";
     cell.rightButton.hidden = YES;
     cell.rightLabel2.hidden = YES;
     
-    if (indexPath.section == 0) {
-        if (indexPath.row == 0) {
-            cell.iconImageView.hidden = NO;
-            [cell.iconImageView sd_setImageWithURL:[NSURL URLWithString:self.model.avatar] placeholderImage:[UIImage imageNamed:@"icon_default_head_big"]];
-            cell.rightImageView.hidden = NO;
-        } else if (indexPath.row == 1){
-            cell.rightLabel.hidden = NO;
-            cell.rightLabel.text = self.model.name;
-            cell.rightLabel.textColor = UIColorFromRGB(0x1A1A1A);
-            cell.rightImageView.hidden = NO;
-        } else {
-            cell.rightLabel.hidden = NO;
-            cell.rightLabel.text = self.model.mobile;
-            cell.rightLabel.textColor = UIColorFromRGB(0xCCCCCC);
-            cell.rightImageView.hidden = YES;
-        }
-    } else if (indexPath.section == 1) {
-        if (indexPath.row == 1) {
-            cell.rightButton.hidden = NO;
-            cell.rightLabel2.hidden = NO;
-            cell.rightLabel2.text = self.model.invate_code;
-            [cell.rightButton addTarget:self action:@selector(rightButtonClick) forControlEvents:UIControlEventTouchUpInside];
-            cell.rightImageView.hidden = YES;
-        }
+    if (indexPath.row == 0) {
+        cell.iconImageView.hidden = NO;
+        [cell.iconImageView sd_setImageWithURL:[NSURL URLWithString:self.model.avatar] placeholderImage:[UIImage imageNamed:@"icon_default_head_big"]];
+        cell.rightImageView.hidden = NO;
+    } else if (indexPath.row == 1) {
+        cell.rightLabel.hidden = NO;
+        cell.rightLabel.text = self.model.name;
+        cell.rightLabel.textColor = UIColorFromRGB(0x1A1A1A);
+        cell.rightImageView.hidden = NO;
+    } else if (indexPath.row == 2) {
+        cell.rightLabel.hidden = NO;
+        cell.rightLabel.text = self.model.mobile;
+        cell.rightLabel.textColor = UIColorFromRGB(0xCCCCCC);
+        cell.rightImageView.hidden = YES;
+    } else {
+        cell.rightLabel.hidden = NO;
+        cell.rightLabel.text = self.model.foundation_name;
+        cell.rightLabel.textColor = UIColorFromRGB(0x1A1A1A);
+        cell.rightImageView.hidden = NO;
     }
     
     return cell;
 }
 
-- (void)rightButtonClick {
-    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-    pasteboard.string = self.model.invate_code;
-    
-    [[VENMBProgressHUDManager sharedManager] showText:@"复制成功"];
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0) {
-        if (indexPath.row == 0) {
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    if (indexPath.row == 0) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+        
+        UIAlertAction *appropriateAction = [UIAlertAction actionWithTitle:@"拍摄" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self presentCameraSingle];
+        }];
+        UIAlertAction *undeterminedAction = [UIAlertAction actionWithTitle:@"从手机相册选择" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
-            UIAlertAction *appropriateAction = [UIAlertAction actionWithTitle:@"拍摄" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                [self presentCameraSingle];
-            }];
-            UIAlertAction *undeterminedAction = [UIAlertAction actionWithTitle:@"从手机相册选择" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                
-                [self presentPhotoPickerViewControllerWithStyle:LGShowImageTypeImagePicker];
-            }];
-            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-                
-            }];
+            [self presentPhotoPickerViewControllerWithStyle:LGShowImageTypeImagePicker];
+        }];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             
-            [alert addAction:appropriateAction];
-            [alert addAction:undeterminedAction];
-            [alert addAction:cancelAction];
-            
-            [self presentViewController:alert animated:YES completion:nil];
-        } else if (indexPath.row == 1) {
-            VENPersonalDataNamePageViewController *vc = [[VENPersonalDataNamePageViewController alloc] init];
-            vc.name = self.model.name;
-            vc.block = ^(NSString *str) {
-                [self loadData];
-            };
-            [self.navigationController pushViewController:vc animated:YES];
-        }
-    } else if (indexPath.section == 1) {
-        if (indexPath.row == 0) {
-            VENPersonalDataInvitationCodePageViewController *vc = [[VENPersonalDataInvitationCodePageViewController alloc] init];
-            [self.navigationController pushViewController:vc animated:YES];
-        }
+        }];
+        
+        [alert addAction:appropriateAction];
+        [alert addAction:undeterminedAction];
+        [alert addAction:cancelAction];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+    } else if (indexPath.row == 1) {
+        VENPersonalDataNamePageViewController *vc = [[VENPersonalDataNamePageViewController alloc] init];
+        vc.name = self.model.name;
+        vc.block = ^(NSString *str) {
+            [self loadData];
+        };
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 

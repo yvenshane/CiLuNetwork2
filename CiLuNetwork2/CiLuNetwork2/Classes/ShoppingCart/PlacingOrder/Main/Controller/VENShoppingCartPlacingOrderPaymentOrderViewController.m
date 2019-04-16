@@ -11,7 +11,7 @@
 #import "VENShoppingCartPlacingOrderSuccessViewController.h"
 #import "VENShoppingCartPlacingOrderPaymentOrderModel.h"
 #import "VENShoppingCartPlacingOrderPaymentOrderPayTypeModel.h"
-//#import "UPPaymentControl.h"
+#import "UPPaymentControl.h"
 
 @interface VENShoppingCartPlacingOrderPaymentOrderViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
@@ -28,6 +28,8 @@ static NSString *cellIdentifier = @"cellIdentifier";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.view.backgroundColor = [UIColor whiteColor];
     
     self.navigationItem.title = @"支付订单";
     
@@ -175,7 +177,7 @@ static NSString *cellIdentifier = @"cellIdentifier";
 }
 
 - (void)setupBottomToolBarButton {
-    UIButton *bottomToolBarButton = [[UIButton alloc] initWithFrame:CGRectMake(0, kMainScreenHeight - 48 - statusNavHeight, kMainScreenWidth, 48)];
+    UIButton *bottomToolBarButton = [[UIButton alloc] initWithFrame:CGRectMake(0, kMainScreenHeight - 48 - statusNavHeight - (tabBarHeight - 49), kMainScreenWidth, 48)];
     bottomToolBarButton.backgroundColor = COLOR_THEME;
     bottomToolBarButton.titleLabel.font = [UIFont systemFontOfSize:16.0f];
     bottomToolBarButton.titleLabel.textColor = [UIColor whiteColor];
@@ -189,68 +191,69 @@ static NSString *cellIdentifier = @"cellIdentifier";
 #pragma mark - 确认支付
 - (void)bottomToolBarButtonClick {
     
-//    NSString *type = @"";
-//    for (VENShoppingCartPlacingOrderPaymentOrderPayTypeModel *model in self.pay_typeArr) {
-//        if (model.isChoice == YES) {
-//            type = model.payID;
-//        }
-//    }
-//    
-//    NSDictionary *params = @{@"type" : type,
-//                             @"order_id" : self.model.order_id};
-//    
-//    [[VENNetworkTool sharedManager] requestWithMethod:HTTPMethodPost path:@"order/pay" params:params showLoading:YES successBlock:^(id response) {
-//        
-//        if ([response[@"status"] integerValue] == 0) {
-//            
-//            if ([type isEqualToString:@"1"]) { // 余额支付
-//                
-//                [[NSNotificationCenter defaultCenter] postNotificationName:@"BALANCE_RESULTDIC" object:nil];
-//                [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshMinePage" object:nil];
-//                
-//            } else if ([type isEqualToString:@"2"]) { // 支付宝
-//                //应用注册scheme,在AliSDKDemo-Info.plist定义URL types
-//                NSString *appScheme = @"CiluNetworkAlipay";
-//                
-//                // NOTE: 将签名成功字符串格式化为订单字符串,请严格按照该格式
-//                NSString *orderString = response[@"data"][@"sign_data"][@"sign"];
-//                
-//                // NOTE: 调用支付结果开始支付
-//                [[AlipaySDK defaultService] payOrder:orderString fromScheme:appScheme callback:^(NSDictionary *resultDic) {
-//                    NSLog(@"reslut = %@",resultDic);
-//                }];
-//            } else if ([type isEqualToString:@"3"]) { // 微信支付
-//                if (WXApi.isWXAppInstalled) {
-//                    if (WXApi.isWXAppSupportApi) {
-//                        PayReq *request = [[PayReq alloc] init];
-//                        request.partnerId = response[@"data"][@"sign_data"][@"partnerid"];
-//                        request.prepayId = response[@"data"][@"sign_data"][@"prepayid"];
-//                        request.package = response[@"data"][@"sign_data"][@"package"];
-//                        request.nonceStr = response[@"data"][@"sign_data"][@"noncestr"];
-//                        request.timeStamp = [response[@"data"][@"sign_data"][@"timestamp"] intValue];
-//                        request.sign= response[@"data"][@"sign_data"][@"sign"];
-//                        [WXApi sendReq:request];
-//                    } else {
-//                        [[VENMBProgressHUDManager sharedManager] showText:@"请升级微信至最新版本！"];
-//                    }
-//                } else {
-//                    [[VENMBProgressHUDManager sharedManager] showText:@"请安装微信客户端"];
-//                }
-//            } else if ([type isEqualToString:@"4"]) { // 银联支付
-//                NSString *tn = response[@"data"][@"sign_data"][@"sign"];
-//                
-//                if (![[VENClassEmptyManager sharedManager] isEmptyString:tn]) {
-//                    [[UPPaymentControl defaultControl]startPay:tn
-//                                                    fromScheme:@"898340150460595"
-//                                                          mode:@"00" // 生产环境:00 开发环境:01
-//                                                viewController:self];
-//                }
-//            }
-//        }
-//        
-//    } failureBlock:^(NSError *error) {
-//        
-//    }];
+    NSString *type = @"";
+    for (VENShoppingCartPlacingOrderPaymentOrderPayTypeModel *model in self.pay_typeArr) {
+        if (model.isChoice == YES) {
+            type = model.payID;
+        }
+    }
+    
+    NSDictionary *params = @{@"type" : type,
+                             @"order_id" : self.model.order_id};
+    
+    [[VENNetworkTool sharedManager] requestWithMethod:HTTPMethodPost path:@"order/pay" params:params showLoading:YES successBlock:^(id response) {
+        
+        if ([response[@"status"] integerValue] == 0) {
+            
+            if ([type isEqualToString:@"1"]) { // 余额支付
+                
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"BALANCE_RESULTDIC" object:nil];
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshMinePage" object:nil];
+                
+            } else if ([type isEqualToString:@"2"]) { // 支付宝
+                //应用注册scheme,在AliSDKDemo-Info.plist定义URL types
+                NSString *appScheme = @"CiluNetwork2Alipay";
+                
+                // NOTE: 将签名成功字符串格式化为订单字符串,请严格按照该格式
+                NSString *orderString = response[@"data"][@"sign_data"][@"sign"];
+                
+                // NOTE: 调用支付结果开始支付
+                [[AlipaySDK defaultService] payOrder:orderString fromScheme:appScheme callback:^(NSDictionary *resultDic) {
+                    NSLog(@"reslut = %@",resultDic);
+                }];
+            } else if ([type isEqualToString:@"3"]) { // 微信支付
+                if (WXApi.isWXAppInstalled) {
+                    if (WXApi.isWXAppSupportApi) {
+                        PayReq *request = [[PayReq alloc] init];
+                        request.partnerId = response[@"data"][@"sign_data"][@"partnerid"];
+                        request.prepayId = response[@"data"][@"sign_data"][@"prepayid"];
+                        request.package = response[@"data"][@"sign_data"][@"package"];
+                        request.nonceStr = response[@"data"][@"sign_data"][@"noncestr"];
+                        request.timeStamp = [response[@"data"][@"sign_data"][@"timestamp"] intValue];
+                        request.sign= response[@"data"][@"sign_data"][@"sign"];
+                        [WXApi sendReq:request];
+                    } else {
+                        [[VENMBProgressHUDManager sharedManager] showText:@"请升级微信至最新版本！"];
+                    }
+                } else {
+                    [[VENMBProgressHUDManager sharedManager] showText:@"请安装微信客户端"];
+                }
+                
+            } else if ([type isEqualToString:@"4"]) { // 银联支付
+                NSString *tn = response[@"data"][@"sign_data"][@"sign"];
+                
+                if (![[VENClassEmptyManager sharedManager] isEmptyString:tn]) {
+                    [[UPPaymentControl defaultControl]startPay:tn
+                                                    fromScheme:@"898340150460595"
+                                                          mode:@"00" // 生产环境:00 开发环境:01
+                                                viewController:self];
+                }
+            }
+        }
+        
+    } failureBlock:^(NSError *error) {
+        
+    }];
 }
 
 - (void)setupNavigationItemLeftBarButtonItem {

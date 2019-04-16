@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="2304" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="qPU-9w-QE4" customClass="VENHomePageFoundationHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="368" height="84"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FgF-GO-pky">
+                    <rect key="frame" x="296" y="22.5" width="57" height="27"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="查看更多&gt;">
+                        <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="特制商品" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLK-aI-C2n">
+                    <rect key="frame" x="15" y="25" width="64" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="ThD-nJ-vmJ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="购买此类商品按基金捐赠比例捐赠" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnq-rr-WP1">
+                    <rect key="frame" x="15" y="52" width="184" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="17" id="uPP-OS-9Be"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NAZ-IZ-tYJ">
+                    <rect key="frame" x="0.0" y="0.0" width="368" height="10"/>
+                    <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="10" id="wRM-TV-Y1U"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="eLK-aI-C2n" firstAttribute="leading" secondItem="qPU-9w-QE4" secondAttribute="leading" constant="15" id="2vX-78-frj"/>
+                <constraint firstItem="eLK-aI-C2n" firstAttribute="top" secondItem="NAZ-IZ-tYJ" secondAttribute="bottom" constant="15" id="74h-ar-mkK"/>
+                <constraint firstItem="NAZ-IZ-tYJ" firstAttribute="top" secondItem="qPU-9w-QE4" secondAttribute="top" id="Ct6-DC-NtR"/>
+                <constraint firstItem="FgF-GO-pky" firstAttribute="centerY" secondItem="eLK-aI-C2n" secondAttribute="centerY" id="FUx-Tc-rkI"/>
+                <constraint firstItem="vnq-rr-WP1" firstAttribute="top" secondItem="eLK-aI-C2n" secondAttribute="bottom" constant="5" id="Fp0-Va-FVA"/>
+                <constraint firstItem="4vY-A5-XvY" firstAttribute="trailing" secondItem="FgF-GO-pky" secondAttribute="trailing" constant="15" id="c4t-ir-Mj9"/>
+                <constraint firstAttribute="trailing" secondItem="NAZ-IZ-tYJ" secondAttribute="trailing" id="eTO-3P-ypZ"/>
+                <constraint firstItem="vnq-rr-WP1" firstAttribute="leading" secondItem="4vY-A5-XvY" secondAttribute="leading" constant="15" id="gRU-IA-TPg"/>
+                <constraint firstItem="NAZ-IZ-tYJ" firstAttribute="leading" secondItem="qPU-9w-QE4" secondAttribute="leading" id="hm2-cn-Xog"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="4vY-A5-XvY"/>
+            <connections>
+                <outlet property="descripLabel" destination="vnq-rr-WP1" id="JAW-7K-4Ev"/>
+                <outlet property="moreButton" destination="FgF-GO-pky" id="1MB-jp-1JQ"/>
+                <outlet property="titleLabel" destination="eLK-aI-C2n" id="Bsv-vj-n05"/>
+            </connections>
+            <point key="canvasLocation" x="-3347.826086956522" y="-1539.5089285714284"/>
+        </view>
+    </objects>
+</document>

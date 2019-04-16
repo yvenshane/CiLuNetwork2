@@ -10,10 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void (^pushToFoundationPageBlock)(NSString *);
+typedef void (^pushToFoundationPageBlock)(NSString *, NSString *);
 
 @interface VENHomePageHorizontalCollectionView2 : UIView
 @property (nonatomic, copy) pushToFoundationPageBlock pushToFoundationPageBlock;
+@property (nonatomic, copy) NSString *current_foundation_id;
 
 @end
 
