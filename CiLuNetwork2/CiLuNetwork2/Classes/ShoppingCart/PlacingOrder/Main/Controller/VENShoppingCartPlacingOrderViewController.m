@@ -129,6 +129,15 @@ static NSString *cellIdentifier = @"cellIdentifier";
             VENShoppingCartPlacingOrderPaymentOrderViewController *vc = [[VENShoppingCartPlacingOrderPaymentOrderViewController alloc] init];
             vc.dataDict = response[@"data"];
             [self.navigationController pushViewController:vc animated:YES];
+            
+            // 提交订单 购物车 小红点 -1
+            NSInteger count = [[[NSUserDefaults standardUserDefaults] objectForKey:@"RedDot"] integerValue] - 1;
+            if (count > 0) {
+                [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%ld", (long)count] forKey:@"RedDot"];
+            } else {
+                [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"RedDot"];
+            }
+            [self.tabBarController.tabBar.items[2] setBadgeValue:[[NSUserDefaults standardUserDefaults] objectForKey:@"RedDot"]];
         }
         
     } failureBlock:^(NSError *error) {
