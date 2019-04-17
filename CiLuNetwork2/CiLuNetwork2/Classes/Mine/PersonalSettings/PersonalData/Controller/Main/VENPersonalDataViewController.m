@@ -117,6 +117,33 @@ static NSString *cellIdentifier = @"cellIdentifier";
             [self loadData];
         };
         [self.navigationController pushViewController:vc animated:YES];
+    } else if (indexPath.row == 3) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"请选择所属基金会" preferredStyle:UIAlertControllerStyleActionSheet];
+        
+        NSDictionary *foundationList = [[NSUserDefaults standardUserDefaults] objectForKey:@"metaData"][@"foundationList"];
+        for (NSDictionary *dict in foundationList) {
+            
+            UIAlertAction *action = [UIAlertAction actionWithTitle:dict[@"name"] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                
+                [[VENNetworkTool sharedManager] requestWithMethod:HTTPMethodPost path:@"setting/modifyFoundation" params:@{@"foundation" : dict[@"id"]} showLoading:YES successBlock:^(id response) {
+                    
+                    if ([response[@"status"] integerValue] == 0) {
+                        self.model.foundation_name = dict[@"name"];
+                        [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:[NSIndexPath indexPathForRow:3 inSection:0], nil] withRowAnimation:UITableViewRowAnimationNone];
+                        [[NSNotificationCenter defaultCenter] postNotificationName:@"ResetHomePage" object:nil];
+                    }
+
+                } failureBlock:^(NSError *error) {
+                    
+                }];
+            }];
+            [alert addAction:action];
+        }
+        
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+        [alert addAction:cancelAction];
+        
+        [self presentViewController:alert animated:YES completion:nil];
     }
 }
 
