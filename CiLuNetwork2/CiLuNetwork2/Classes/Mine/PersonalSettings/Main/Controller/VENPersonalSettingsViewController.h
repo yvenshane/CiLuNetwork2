@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 typedef void (^loginoutSuccessBlock)(NSString *);
 @interface VENPersonalSettingsViewController : VENBaseViewController
 @property (nonatomic, copy) loginoutSuccessBlock block;
+@property (nonatomic, assign) BOOL isKeyAccount;
 
 @end
 

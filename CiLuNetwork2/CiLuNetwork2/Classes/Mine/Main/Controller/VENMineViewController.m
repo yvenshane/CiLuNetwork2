@@ -356,6 +356,7 @@ static NSString *cellIdentifier3 = @"cellIdentifier3";
 - (void)settingButtonClick {
     if ([[VENUserStatusManager sharedManager] isLogin]) {
         VENPersonalSettingsViewController *vc = [[VENPersonalSettingsViewController alloc] init];
+        vc.isKeyAccount = [self.model.is_key_account integerValue];
         vc.hidesBottomBarWhenPushed = YES;
         vc.block = ^(NSString * str) {
             [self.tableView.mj_header beginRefreshing];

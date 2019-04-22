@@ -52,6 +52,7 @@ static NSString *cellIdentifier = @"cellIdentifier";
     if (indexPath.section == 0) {
         if (indexPath.row == 0) { // 个人资料
             VENPersonalDataViewController *vc = [[VENPersonalDataViewController alloc] init];
+            vc.isKeyAccount = self.isKeyAccount;
             [self.navigationController pushViewController:vc animated:YES];
         } else if (indexPath.row == 1) { // 修改密码
             VENResetPasswordViewController *vc = [[VENResetPasswordViewController alloc] init];

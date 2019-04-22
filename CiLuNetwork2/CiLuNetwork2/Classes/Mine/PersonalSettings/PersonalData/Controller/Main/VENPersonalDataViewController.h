@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface VENPersonalDataViewController : VENBaseViewController
+@property (nonatomic, assign) BOOL isKeyAccount;
 
 @end
 
