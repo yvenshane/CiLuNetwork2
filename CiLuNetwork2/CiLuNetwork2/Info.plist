@@ -40,6 +40,16 @@
 				<string>CiluNetwork2Alipay</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>unionpay</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>898340153993213</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>

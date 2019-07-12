@@ -244,7 +244,7 @@ static NSString *cellIdentifier = @"cellIdentifier";
                 
                 if (![[VENClassEmptyManager sharedManager] isEmptyString:tn]) {
                     [[UPPaymentControl defaultControl]startPay:tn
-                                                    fromScheme:@"898340150460595"
+                                                    fromScheme:@"898340153993213"
                                                           mode:@"00" // 生产环境:00 开发环境:01
                                                 viewController:self];
                 }
